@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="../style/registration.css" />
+  </head>
+  <body>
+    <h2 class="title"><u>Registration Form</u></h2>
+
+    <form action="./login_form.html">
+      <table class="form-table">
+        <tr>
+          <td class="form_child"><label for="fname">First Name</label></td>
+          <td colspan="2">
+            <input
+              type="text"
+              id="fname"
+              name="fname"
+              placeholder="Enter your first name"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td class="form_child"><label for="lname">Last Name</label></td>
+          <td colspan="2">
+            <input
+              type="text"
+              id="lname"
+              name="lname"
+              placeholder="Enter your last name"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td class="form_child"><label for="email">Email</label></td>
+          <td colspan="2">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td class="form_child"><label for="password">Password</label></td>
+          <td colspan="2">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+            />
+          </td>
+        </tr>
+
+          <tr>
+            <td rowspan="2">Gender</td>
+            <td colspan="2">
+              <input type="radio" name="gender" value="female" /> Female
+            </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <input type="radio" name="gender" value="male" /> Male
+              </td>
+            </tr>
+
+
+          <td class="form_child"><label for="country">Country</label></td>
+          <td colspan="2">
+            <select name="country" id="country">
+              <option>Select a Country...</option>
+              <option>Egypt</option>
+              <option>Sudan</option>
+              <option>Libya</option>
+              <option>Tunisia</option>
+              <option>Morocco</option>
+              <option>Palestine</option>
+              <option>India</option>
+              <option>South Korea</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="form_child"><label for="birthdayDate">Birthday</label></td>
+          <td colspan="2"><input type="date" id="birthdayDate" name="birthdayDate" /></td>
+        </tr>
+
+        <tr>
+          <td colspan="3"><u>Interests</u></td>
+        </tr>
+        <tr class="interests_part">
+          <td><input type="checkbox" name="sports" /> Sports</td>
+          <td><input type="checkbox" name="music" /> Music</td>
+          <td><input type="checkbox" name="shopping" /> Shopping</td>
+        </tr>
+        <tr class="interests_part">
+          <td><input type="checkbox" name="fashion" /> Fashion</td>
+          <td><input type="checkbox" name="reading" /> Reading</td>
+          <td><input type="checkbox" name="movies" /> Movies</td>
+        </tr>
+        <tr class="interests_part">
+          
+          
+        </tr>
+
+        <tr>
+          <td colspan="3"><u>Bio</u></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <textarea name="bio" id="bio" cols="30" rows="5"></textarea>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="3" align="center">
+            <input type="submit" value="Register" />
+            <input type="reset" value="Clear" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

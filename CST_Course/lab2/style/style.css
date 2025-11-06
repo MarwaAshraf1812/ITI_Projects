@@ -1,0 +1,33 @@
+* {
+  background-color: lightpink;
+}
+
+.parent, .part_1 , .center_image, .copy_part {
+  text-align: center
+}
+
+.img {
+  width: 500px;
+  height: 500px;
+}
+
+.part_1 h1 {
+  font-size: 20pt;
+}
+
+.li_f{
+  font-family: 'Arial Black', Gadget, sans-serif;
+}
+
+.li_cl{
+  color: red;
+}
+
+.li_diff{
+  font-size: 8pt;
+}
+
+.next_link {
+  text-align: right;
+}
+

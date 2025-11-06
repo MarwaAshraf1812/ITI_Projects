@@ -1,0 +1,51 @@
+/* *{
+  background-color: rgb(223, 252, 252);
+} */
+.title {
+  text-align: center;
+}
+
+.form-table {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-collapse: collapse;
+}
+
+.form-table td {
+  border: 1px solid #ccc;
+  padding: 7px;
+  color: rgb(143, 91, 91);
+}
+
+.form-table .form_child {
+  text-align: left;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  background-color: grey;
+  border-radius: 5px;
+  border: 1px solid;
+  padding: 3px 10px;
+  color: white;
+}
+td > select,
+input[type="date"],
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  border: solid 1px #ccc;
+  padding: 2px;
+}
+
+.interests_part td {
+  border: none;
+}
+
+textarea {
+  resize: none;
+}

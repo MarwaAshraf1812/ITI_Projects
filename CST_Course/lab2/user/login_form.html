@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login form</title>
+    <link rel="stylesheet" href="../style/login.css">
+  </head>
+  <body>
+    <div class="container">
+      <form action="../main.html">
+      <fieldset>
+        <legend><b>Login form</b></legend>
+        <div class="form-item">
+          <label for="username" accesskey="u">User name:</label><br>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Enter user name"
+          />
+        </div>
+
+        <div class="form-item">
+          <label for="pass" accesskey="s">Password:</label><br>
+          <input
+            type="password"
+            id="pass"
+            name="pass"
+            placeholder="Enter Password"
+          />
+        </div>
+        <div class="form-item">
+          <input type="checkbox" id="chbx" name="remember" />
+          <label for="chbx">Remember Me</label>
+        </div>
+
+        <div class="form-item-btn">
+          <input type="submit" class="btn">
+        </div>
+      </fieldset>
+    </form>
+    </div>
+  </body>
+</html>
