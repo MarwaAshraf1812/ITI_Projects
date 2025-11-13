@@ -30,13 +30,15 @@ public:
 
     BankAccount &deposit(double deb)
     {
-        balance += deb;
+        if (deb > 0)
+            balance += deb;
         return *this;
     }
 
     BankAccount &withdraw(double val)
     {
-        balance -= val;
+        if( val > 0 && val <= balance)
+            balance -= val;
         return *this;
     }
 

@@ -37,66 +37,34 @@ public:
     cout << "Current complex number count: " << counter << endl;
   }
 
-  void printComplex()
-  {
-    if (real == 0 && image == 0)
+    void printComplex()
     {
-      cout << "0" << endl;
-    }
-    else
-    {
-      if (real == 0)
-      {
-        if (image == 1)
+        if (real == 0 && image == 0)
+            cout << "0" << endl;
+        else if (real == 0)
         {
-          cout << "i" << endl;
-        }
-        else
-        {
-          if (image == -1)
-          {
-            cout << "-i" << endl;
-          }
-          else
-          {
-            cout << image << "i" << endl;
-          }
-        }
-      }
-      else
-      {
-        if (image == 0)
-        {
-          cout << real << "i" << endl;
-        }
-        else
-        {
-          if (image == 1)
-          {
-            cout << real << "+i" << endl;
-          }
-          else
-          {
-            if (image == -1)
-            {
-              cout << real << "-i" << endl;
-            }
+            if (image == 1)
+                cout << "i" << endl;
+            else if (image == -1)
+                cout << "-i" << endl;
             else
-            {
-              if (image > 0)
-              {
-                cout << real << "+" << image << "i" << endl;
-              }
-              else // image < 0   complex c5(0, -9);   // -9i
-              {
-                cout << real << image << "i" << endl;
-              }
-            }
-          }
+                cout << image << "i" << endl;
         }
-      }
+        else
+        {
+            if (image == 0)
+                cout << real << endl;
+            else if (image == 1)
+                cout << real << "+i" << endl;
+            else if (image == -1)
+                cout << real << "-i" << endl;
+            else if (image > 0)
+                cout << real << "+" << image << "i" << endl;
+            else
+                cout << real << image << "i" << endl;
+        }
     }
-  }
+
 };
 int complex::counter = 0;
 
