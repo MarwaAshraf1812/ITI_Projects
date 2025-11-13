@@ -30,13 +30,17 @@ char getch()
 }
 
 void print_horizontal_border(int width);
-void print_line(char line[], int line_length, int cursor_position);
-void print_rectangle_with_text(char line[], int line_length, int cursor_position);
-bool process_input(char pressed_key, char line[], int &line_length, int &cursor_position);
+void print_line(char *line, int line_length, int cursor_position);
+void print_rectangle_with_text(char *line, int line_length, int cursor_position);
+bool process_input(char pressed_key, char *line, int &line_length, int &cursor_position);
 
 int main()
 {
-  char line[100] = {0};
+
+  int size;
+  cout << "Enter the maximum size of the line: ";
+  cin >> size;
+  char * line = new char[size];
   int line_length = 0;
   int cursor_position = 0;
   int pressed_key;
@@ -46,6 +50,11 @@ int main()
   cout << endl;
   print_horizontal_border(MIN_WIDTH);
 
+
+  /* 3shan a5leah y yb2a fo2 el rectangle  we a5leah yb2a 3ala nafs el line
+    mashy 3ashan keda lma y3ml enter ma ytnqlsh ll
+    line gdida w yb2a fe space kbeer ma ben el rectangle w el line el gdida
+  */
   cout << "\033[2A";
   cout.flush();
 
@@ -60,20 +69,20 @@ int main()
   }
 
   cout << "\n\nExiting program.\n";
+  delete[] line;
   return 0;
 }
 
 
 
 // process inputs
-bool process_input(char pressed_key, char line[], int &line_length, int &cursor_position)
+bool process_input(char pressed_key, char *line, int &line_length, int &cursor_position)
 {
   // handle Enter key
   if (pressed_key == '\n')
   {
     line[line_length] = '\0';
-    cout << "\n\nEnter ctrl - c to exit" << endl;
-    return false;
+    return true;
   }
 
   // handle Ctrl + C
@@ -100,51 +109,27 @@ bool process_input(char pressed_key, char line[], int &line_length, int &cursor_
     line[line_length] = '\0';
   }
 
-  // if (pressed_key == 27)
-  // {
-  //   // “ESC [ D”, left arrow key , "ESC [ C”, right arrow key
-  //   char next_pressed_1_type = getch();
-  //   char next_pressed_2_type = getch();
+  if (pressed_key == 27)
+  {
+    // “ESC [ D”, left arrow key , "ESC [ C”, right arrow key
+    char next_pressed_1_type = getch();
+    char next_pressed_2_type = getch();
 
-  //   if (next_pressed_1_type == '[')
-  //   {
-  //     if (next_pressed_2_type == 'D' && cursor_position > 0)
-  //     {
-  //       cursor_position--;
-  //     }
-  //     else if (next_pressed_2_type == 'C' && cursor_position < line_length)
-  //     {
-  //       cursor_position++;
-  //     }
-  //   }
-  // }
-
-  if (pressed_key == 27) {
-    char next1 = getch();
-    char next2 = getch(); 
-    if (next1 == '[') {
-        if (next2 == 'D' && cursor_position > 0) cursor_position--;
-        else if (next2 == 'C' && cursor_position < line_length) cursor_position++;
-        else if (next2 == 'H') cursor_position = 0;
-        else if (next2 == 'F') cursor_position = line_length; 
-        else if (next2 == '3') {
-            getch(); 
-            if (cursor_position < line_length) {
-                for (int i = cursor_position; i < line_length - 1; i++)
-                    line[i] = line[i + 1];
-                line_length--;
-                line[line_length] = '\0';
-            }
-        }
+    if (next_pressed_1_type == '[')
+    {
+      if (next_pressed_2_type == 'D' && cursor_position > 0)
+      {
+        cursor_position--;
+      }
+      else if (next_pressed_2_type == 'C' && cursor_position < line_length)
+      {
+        cursor_position++;
+      }
     }
-}
-
-
-
-  int max_size  = 30;
+  }
 
   // handle printable characters
-  if (isprint(pressed_key) && line_length < max_size)
+  if (isprint(pressed_key) && line_length < 90)
   {
     if (cursor_position < line_length)
     {
@@ -166,7 +151,7 @@ bool process_input(char pressed_key, char line[], int &line_length, int &cursor_
 }
 
 // print line inside the rectangle
-void print_line(char line[], int line_length, int cursor_position)
+void print_line(char *line, int line_length, int cursor_position)
 {
   cout << "\033[10G";
   cout << BG_GRAY_FG_BLUE << "│ ";
@@ -196,7 +181,7 @@ void print_horizontal_border(int width)
 }
 
 // draw a rectangle with the line of text
-void print_rectangle_with_text(char line[], int line_length, int cursor_position)
+void print_rectangle_with_text(char *line, int line_length, int cursor_position)
 {
   print_horizontal_border(max(MIN_WIDTH, line_length));
 
