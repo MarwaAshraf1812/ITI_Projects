@@ -67,7 +67,7 @@ public:
       {
         if (image == 0)
         {
-          cout << real << endl;
+          cout << real << "i" << endl;
         }
         else
         {
@@ -87,7 +87,7 @@ public:
               {
                 cout << real << "+" << image << "i" << endl;
               }
-              else
+              else // image < 0   complex c5(0, -9);   // -9i
               {
                 cout << real << image << "i" << endl;
               }
@@ -112,6 +112,7 @@ int main()
   complex c5(0, -9);   // -9i
   complex c6(-9, 3);   // -9+3i
   complex c7(8, 1);    // 8+i
+  complex c8(8);      // 8
 
   cout << "-------------------------------------------------\n"<< endl;
   c1.printComplex();
@@ -121,6 +122,7 @@ int main()
   c5.printComplex();
   c6.printComplex();
   c7.printComplex();
+  c8.printComplex();
 
 
   cout << "\n-------------------------------------------------\n"<< endl;
