@@ -82,6 +82,9 @@ int main()
   complex c7(8, 1);    // 8+i
   complex c8(8);      // 8
 
+  complex c;
+
+
   cout << "-------------------------------------------------\n"<< endl;
   c1.printComplex();
   c2.printComplex();
@@ -91,6 +94,13 @@ int main()
   c6.printComplex();
   c7.printComplex();
   c8.printComplex();
+
+
+  cout << "\n-------------------------------------------------\n"<< endl;
+
+  cout << "default constructor:\n";
+  c.printComplex();
+
 
 
   cout << "\n-------------------------------------------------\n"<< endl;
