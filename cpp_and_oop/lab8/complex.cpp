@@ -12,7 +12,7 @@ public:
   // complex() = default; // default constructor compiler generated
   complex() : real{0.0}, image{0.0} // user defined default constructor by initializer list
   {
-    cout << "Complex number created (uniform): " << ++counter << endl;
+    // cout << "Complex number created (uniform): " << ++counter << endl;
   }
 
   complex(float r, float i)
@@ -20,7 +20,7 @@ public:
     real = r;
     image = i;
     counter += 1;
-    cout << "Complex number created: " << counter << endl;
+    // cout << "Complex number created: " << counter << endl;
   };
 
   complex(float r)
@@ -28,8 +28,10 @@ public:
     real = r;
     image = 0;
     counter += 1;
-    cout << "Complex number created: " << counter << endl;
+    // cout << "Complex number created: " << counter << endl;
   }
+
+  // Copy Constructor
   complex(const complex &other)
   {
     this->real = other.real;
@@ -40,7 +42,7 @@ public:
   ~complex()
   {
     counter -= 1;
-    cout << "Complex number destroyed. Remaining: " << counter << endl;
+    // cout << "Complex number destroyed. Remaining: " << counter << endl;
   }
 
   static void showCounter()
@@ -208,6 +210,8 @@ public:
   {
     return this->real;
   }
+
+  
   friend ostream &operator<<(ostream &oot, const complex &c);
   friend std::istream &operator>>(std::istream &in, complex &c);
 };
@@ -269,7 +273,7 @@ int main()
 
   c3 = c1 * c2; // c3 = 3 * 1 + 7i
   cout << "c3 = c1 * c2: " << c3 << endl;
-  cout << "\n--------------------------------------------------" << endl;
+  cout << "\n--------------lab8/complex.cpp------------------------------------" << endl;
   c3 = c1 / c2; // c3 = 3 / 1 + 7i
   cout << "c3 = c1 / c2: " << c3 << endl;
   cout << "\n==================================================" << endl;
