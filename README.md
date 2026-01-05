@@ -5,9 +5,6 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/repo-size/MarwaAshraf1812/ITI_Projects.git" />
-  <img src="https://img.shields.io/github/last-commit/MarwaAshraf1812/ITI_Projects.git" />
-  <img src="https://img.shields.io/github/commit-activity/m/MarwaAshraf1812/ITI_Projects.git" />
   <img src="https://img.shields.io/badge/Status-Active-success" />
 </p>
 
