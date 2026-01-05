@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <input type="button" value="  1  " onclick="displayVal(this)" />
+    <input type="button" value="  2  " onclick="displayVal(this)" />
+    <input type="button" value="  3  " onclick="displayVal(this)" />
+    <input type="button" value="  4  " onclick="displayVal(this)" />
+    <input type="button" value="  5  " onclick="displayVal(this)" />
+    <input type="button" value="  6  " onclick="displayVal(this)" />
+    <input type="button" value="  7  " onclick="displayVal(this)" />
+    
+    <input type="text" id="txt1" />
+    <input type="button" value=" C  "  onclick="clearValues()"/>
+    <input type="button" value=" << " onclick="eraseVal()" />
+    
+    <br />
+    
+    <select id="menu" multiple size="3">
+      <option>option#1</option>
+      <option>option#2</option>
+      <option>option#3</option>
+      <option value="o4">option#4</option>
+      <option>option#5</option>
+    </select>
+    
+    <input type="button" value="displayOptions" onclick="displaySelection()" />
+
+    <input
+      type="text"
+      onfocus="select()"
+      onchange="displayContent(this)"
+      id ="txt2"
+    />
+    <div id="div1id"></div>
+  </body>
+  <script src="./form.js"></script>
+</html>
