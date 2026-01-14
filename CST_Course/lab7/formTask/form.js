@@ -2,7 +2,6 @@ function displayVal(val) {
   let elem = val.value;
   let element = document.getElementById("txt1");
   element.value += elem.trim();
-
 }
 
 function eraseVal() {

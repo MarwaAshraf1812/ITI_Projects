@@ -23,8 +23,9 @@ let timer;
 let customEvent = new Event("userInfoEvent");
 
 document.addEventListener("userInfoEvent", function() {
-  alert("Warning: 30 seconds passed without user information!");
+  alert("Warning: Time passed without user information!");
 })
+
 function startTimer() {
   timer = setTimeout( function() {
     let currentName = document.getElementById("name").value;
@@ -32,9 +33,13 @@ function startTimer() {
     if (currentName === "" && currentPass === "") {
     document.dispatchEvent(customEvent);
     console.log("Event Fired! No user information provided.");
-    } else {
-      console.log("User information provided. Event not fired.");
     }
-  }, 30);
+  }, 30000);
+}
+
+function stopTimerOnSubmit(e) {
+  e.preventDefault();
+  clearTimeout(timer);
+  console.log("User submitted successfully! Timer cancelled.");
 }
 startTimer()
