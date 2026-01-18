@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>task3</title>
+  <style>
+      #container {
+      width: 600px;
+      height: 300px;
+      border: 2px solid black;
+      margin: 20px auto;
+      position: relative;
+    }
+    img {
+      width: 50px;
+      position: absolute;
+    }
+    
+    #icon1 { left: 0px; top: 125px; }
+    #icon2 { right: 0px; top: 125px; }
+    #iconTop { left: 275px; top: 0px; }
+    </style>
+</head>
+
+<body>
+  <div id="container">
+    <img id="icon1" src="./icon1.gif">
+    
+    <img id="iconTop" src="./TOP.JPG">
+
+    <img id="icon2" src="./icon2.gif">
+  </div>
+
+  <div style="text-align:center; margin-top: 20px;">
+    <button onclick="go()">Go</button>
+    <button onclick="stop()">Stop</button>
+    <button onclick="reset()">Reset</button>
+  </div>
+  <script src="./script.js"></script>
+</body>
+
+</html>
