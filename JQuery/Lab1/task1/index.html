@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>task1</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li id="about">About</li>
+      <li id="gallary">Ghallary</li>
+      <li id="services">Services
+          <div id="servicesSec">
+            <ul class="subMenu">
+              <li>service</li>
+              <li>service</li>
+              <li>service</li>
+              <li>service</li>
+            </ul>
+          </div>
+      </li>
+      <li id="complain">Complain</li>
+    </ul>
+  </nav>
+
+  <div id="aboutSec" class="content-box">
+    <h3>About Us ☃️</h3>
+    <p>Story about snow man...</p>
+  </div>
+
+  <div id="gallarySec" class="content-box">
+    <div class="slider">
+
+      <div id="prevBtn" class="arrow-btn">
+        <img src="./images/left.png" alt="Prev">
+      </div>
+
+      <div class="slider-img">
+        <img id="slideImg" src="./images/1.jpg" alt="Snowman" width="150">
+      </div>
+
+      <div id="nextBtn" class="arrow-btn">
+        <img src="./images/right.png" alt="Next">
+      </div>
+    </div>
+  </div>
+
+  <div id="complainSec" class="content-box">
+    <div id="formContainer">
+        <input type="text" id="userName" placeholder="Your Name"><br><br>
+        <input type="email" id="userEmail" placeholder="Your Email"><br><br>
+        <input type="text" id="userPhone" placeholder="Your Phone"><br><br>
+        <textarea id="complainText" placeholder="Your Complaint"></textarea><br><br>
+        <button id="sendBtn">Send</button>
+    </div>
+    
+    <div id="previewContainer" style="display:none;">
+        <p>Name: <span id="previewName"></span></p>
+        <p>Email: <span id="previewEmail"></span></p>
+        <p>Phone: <span id="previewPhone"></span></p>
+        <p>Complaint: <span id="previewText"></span></p>
+        <button id="editBtn">Edit</button>
+    </div>
+</div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
