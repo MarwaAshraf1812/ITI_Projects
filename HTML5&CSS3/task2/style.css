@@ -1,0 +1,41 @@
+body {
+  font-family: 'Times New Roman', serif;
+  padding: 30px;
+  text-align: center;
+}
+
+div {
+  margin-bottom: 20px;
+}
+
+span {
+  display: inline-block;
+  width: 70px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+input[type="range"] {
+  width: 250px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+h2 {
+  margin-top: 50px;
+  font-size: 2rem;
+  color: rgb(0, 0, 0);
+}
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
+
+
+.green {
+  color: green;
+}
