@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 4: Linear Gradient</title>
+    <style>
+        body {
+            margin: 20px;
+        }
+        canvas {
+            border: 5px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="gameCanvas" width="500" height="400"></canvas>
+
+    <script>
+        var canvas = document.getElementById('gameCanvas');
+        var ctx = canvas.getContext('2d');
+
+        var skyGradient = ctx.createLinearGradient(0, 0, 0, 250);
+        skyGradient.addColorStop(0, "#00BFFF");
+        skyGradient.addColorStop(1, "white");
+
+        ctx.fillStyle = skyGradient;
+        ctx.fillRect(0, 0, 500, 250);
+
+        var grassGradient = ctx.createLinearGradient(0, 250, 0, 400);
+        grassGradient.addColorStop(0, "#7CFC00");
+        grassGradient.addColorStop(1, "white");
+
+        ctx.fillStyle = grassGradient;
+        ctx.fillRect(0, 250, 500, 150);
+
+        ctx.beginPath();
+        ctx.lineWidth = 8;
+        ctx.strokeStyle = "black";
+        
+        ctx.moveTo(150, 300);
+        ctx.lineTo(150, 150);
+        ctx.lineTo(350, 150);
+        ctx.lineTo(350, 300);
+        
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = "rgba(0,0,0,0.3)";
+
+        ctx.moveTo(150, 300);
+        ctx.lineTo(180, 280);
+        ctx.lineTo(180, 150); 
+        ctx.lineTo(150, 150);
+
+        ctx.moveTo(350, 300);
+        ctx.lineTo(320, 280);
+        ctx.lineTo(320, 150);
+        ctx.lineTo(350, 150);
+
+        ctx.moveTo(180, 150);
+        ctx.lineTo(320, 150);
+        
+        ctx.stroke();
+    </script>
+</body>
+</html>

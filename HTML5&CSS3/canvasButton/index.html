@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 5: Two Circles Purple</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        canvas {
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+        
+        var centerX = canvas.width / 2;
+        var centerY = canvas.height / 2;
+        
+        var outerRadius = 150;
+        var innerRadius = 110;
+
+        var outerGradient = ctx.createRadialGradient(centerX, centerY, outerRadius * 0.8, centerX, centerY, outerRadius);
+        outerGradient.addColorStop(0, "#9370DB"); 
+        outerGradient.addColorStop(1, "#4B0082");   
+
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, outerRadius, 0, 2 * Math.PI, false);
+        ctx.fillStyle = outerGradient;
+        ctx.fill();
+        ctx.closePath();
+
+        var innerGradient = ctx.createRadialGradient(centerX - 20, centerY - 20, innerRadius * 0.1, centerX, centerY, innerRadius);
+        innerGradient.addColorStop(0, "#E6E6FA"); 
+        innerGradient.addColorStop(1, "#8A2BE2");   
+
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, innerRadius, 0, 2 * Math.PI, false);
+        ctx.fillStyle = innerGradient;
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.font = "bold 140px Arial";
+        ctx.fillStyle = "white";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText("M", centerX, centerY + 5); 
+    </script>
+
+</body>
+</html>

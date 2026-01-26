@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polyfill Task</title>
+</head>
+<body>
+  <script src="./cookieStorage.js"></script>
+  <script src="./polyfill.js"></script>
+  
+  <script>
+      var storage, forcePolyfill=true;
+
+      if (forcePolyfill || !window.localStorage) {
+          console.log("Using: Cookie Polyfill");
+          storage = cookieStorage;
+      } else {
+          console.log("Using: Native LocalStorage");
+          storage = window.localStorage;
+      }
+
+      try {
+        storage.setItem('username', 'Marwa');
+        console.log("Current Cookies:", document.cookie);
+
+        var value = storage.getItem('username');
+        if (value === 'Marwa') {
+            console.log("Retrieved correct value: " + value);
+        } else {
+            console.log("Failed: Expected 'Marwa', got: " + value);
+        }
+
+
+    } catch(e) {
+      console.log(e.message);
+    }
+
+  </script>
+</body>
+</html>
