@@ -1,0 +1,40 @@
+body { 
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #fff;
+}
+
+.text-container{
+  padding: 10px 40px;
+  background-color: #cbdcf7;
+  border: 1.5px solid #4a90e2;
+  border-radius: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+@keyframes blink-animation {
+  0% {
+    background-color: #fce4ec;
+    box-shadow: 0 0 15px #a2b9ff;
+  }
+  50% {
+  background-color: #fce4ec;
+  box-shadow:  0 0 15px #8da3e7;
+  }
+
+  100% {
+    background-color: #fce4ec;
+    box-shadow: 0 0 15px #5d76bf;
+  }
+}
+
+
+.text-container:hover {
+  animation: blink-animation 1s infinite;
+}

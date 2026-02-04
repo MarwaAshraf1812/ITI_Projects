@@ -1,0 +1,19 @@
+.image-container {
+    width: 400px;
+    height: 300px;
+}
+
+.fade-img {
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  cursor: pointer;
+}
+
+.fade-img:hover {
+  opacity: 0;
+}
+
+
+

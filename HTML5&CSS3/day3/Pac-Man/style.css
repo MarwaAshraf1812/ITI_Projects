@@ -1,0 +1,27 @@
+.pacman {
+  width: 0px;
+  height: 0px;
+  border-right: 60px solid transparent;
+  border-top: 60px solid red;
+  border-left: 60px solid red;
+  border-bottom: 60px solid red;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+
+  transition: transform 0.3s ease;
+}
+
+@keyframes mouth-move {
+  0%, 100% {
+    border-right: 50px solid transparent;
+  }
+  50% {
+    border-right: 50px solid red;
+  }
+}
+
+.pacman:hover {
+    animation: mouth-move 0.5s infinite;
+}
