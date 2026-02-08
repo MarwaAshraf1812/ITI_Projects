@@ -54,7 +54,7 @@ body {
     transition: background-color 0.5s ease;
   }
   .container {
-    animation: slowRotate 8s linear infinite;
+    animation: slowRotate 3s linear infinite;
   }
 }
 
@@ -68,7 +68,10 @@ body {
 }
 
 @keyframes slowRotate {
-  0% {transform: rotate(45deg);}
-  50% {transform: rotate(50deg);}
-  100% {transform: rotate(60deg)}
+  from {
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(405deg); 
+  }
 }
