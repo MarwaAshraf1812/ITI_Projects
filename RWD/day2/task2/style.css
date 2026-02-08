@@ -1,0 +1,74 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: lightskyblue;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.item {
+  background-color: lightslategray;
+  border: 1px solid black;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  grid-template-rows: repeat(3, 150px);
+  gap: 10px;
+  grid-template-areas:
+    "top-left     top-right    top-right"
+    "top-left     bottom-left  center"
+    "bottom-right bottom-right center";
+}
+
+.item-top-left {
+  grid-area: top-left;
+}
+.item-top-right {
+  grid-area: top-right;
+}
+.item-center {
+  grid-area: center;
+}
+.item-bottom-left {
+  grid-area: bottom-left;
+}
+.item-bottom-right {
+  grid-area: bottom-right;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+    background-color: lightpink;
+    animation: changeBg 5s infinite alternate;
+    transition: background-color 0.5s ease;
+  }
+  .container {
+    animation: slowRotate 8s linear infinite;
+  }
+}
+
+@keyframes changeBg {
+  0% {
+    background-color: lightsalmon;
+  }
+  100% {
+    background-color: lightpink;
+  }
+}
+
+@keyframes slowRotate {
+  0% {transform: rotate(45deg);}
+  50% {transform: rotate(50deg);}
+  100% {transform: rotate(60deg)}
+}
