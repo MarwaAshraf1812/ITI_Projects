@@ -66,6 +66,13 @@ body {
     background-color: lightpink;
   }
 }
+/* .item {
+  animation: counterRotate 3s linear infinite;
+}
+@keyframes counterRotate {
+  from { transform: rotate(-45deg); }
+  to { transform: rotate(-405deg); }
+} */
 
 @keyframes slowRotate {
   from {
