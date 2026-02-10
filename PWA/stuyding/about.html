@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Sushi Delight</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --sushi-red: #d93025; /* الدرجة القريبة من المنيو بتاعك */
+            --soft-bg: #f8f9fa;
+        }
+
+        body {
+            background-color: var(--soft-bg);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar {
+            background-color: var(--sushi-red);
+        }
+
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+
+        .hero-section {
+            background-color: white;
+            padding: 60px 0;
+            border-bottom: 5px solid var(--sushi-red);
+            text-align: center;
+        }
+
+        .about-img {
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            color: var(--sushi-red);
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🍣 Sushi Delight</a>
+            <div class="ms-auto">
+                <a class="nav-link d-inline-block px-2" href="index.html">Home</a>
+                <a class="nav-link d-inline-block px-2 fw-bold" href="about.html">About</a>
+                <a class="nav-link d-inline-block px-2" href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="display-4 fw-bold">About Our PWA 📱</h1>
+            <p class="lead text-muted">Authentic flavors, now available even offline!</p>
+        </div>
+    </section>
+
+    <div class="container my-5">
+        <div class="row align-items-center">
+            <div class="col-md-6 mb-4">
+                <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=600&q=80" alt="Sushi Chef" class="img-fluid about-img">
+            </div>
+            <div class="col-md-6">
+                <h2 class="section-title">Our Story</h2>
+                <p>Welcome to <strong>Sushi Delight</strong>. We pride ourselves on delivering the freshest Japanese flavors straight to your screen and your doorstep. Our journey started with a passion for traditional culinary arts and modern technology.</p>
+                <p>This is a Progressive Web App (PWA), meaning you can install it on your device and access our menu anytime, anywhere—even without an internet connection!</p>
+                <div class="mt-4">
+                    <span class="badge bg-danger p-2">Fresh Ingredients</span>
+                    <span class="badge bg-danger p-2">Offline Support</span>
+                    <span class="badge bg-danger p-2">Fast Performance</span>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-5">
+
+        <div class="row text-center">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm p-4">
+                    <h3 class="h5">🚀 Fast Access</h3>
+                    <p class="text-muted">No need for app stores. Just click "Install" and you're ready to order.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm p-4">
+                    <h3 class="h5">📦 Offline Menu</h3>
+                    <p class="text-muted">View our delicious starters and main dishes even in airplane mode.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm p-4">
+                    <h3 class="h5">🍣 Authentic Taste</h3>
+                    <p class="text-muted">Every roll is crafted with care using the highest quality ingredients.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center">
+        <p>© 2026 Sushi Delight PWA - Crafted for ITI Project</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
