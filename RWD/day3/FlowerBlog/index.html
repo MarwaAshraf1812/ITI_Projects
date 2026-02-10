@@ -1,37 +1,36 @@
 <!doctype html>
-<html lang="en">
-
+<html lang="en" data-bs-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Flower Blog</title>
+
   <link rel="stylesheet" href="style.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 </head>
 
-<body data-bs-theme="light">
+<body>
   <div class="container py-4">
     <h1 class="fw-bold text-lavender">The Lavender Blog</h1>
   </div>
+
   <nav class="navbar navbar-expand-lg navbar-custom navbar-dark mb-4">
     <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav w-100 justify-content-around">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Blog</a>
-          </li>
+          <li class="nav-item"><a class="nav-link active" href="#">Blog</a></li>
           <li class="nav-item"><a class="nav-link" href="#">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Archives</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
         </ul>
-        <div class="text-light">
-          <i class="bi bi-moon-stars-fill" id="theme-icon"></i>
-        </div>
+
+        <!-- Dark mode icon -->
+        <i class="bi bi-moon-stars-fill text-light fs-5 ms-3" id="theme-toggle" style="cursor: pointer"></i>
       </div>
     </div>
   </nav>
@@ -49,207 +48,131 @@
       </div>
     </div>
 
-    <div class="row align-items-start blog-post">
+    <div class="row">
       <div class="col-md-8">
         <article class="mb-5">
-          <h2 class="blog-post-title mb-2">
-            This is the title of a blog post
-          </h2>
-          <p class="post-meta mb-4">
-            Posted on June 29th 2026 by <a href="#">Mads Kjaer</a> -
-            <a href="#comments">3 comments</a>
+          <h2 class="fw-bold mb-2">This is the title of a blog post</h2>
+          <p class="fst-italic text-muted mb-4">
+            Posted on June 29th 2026 by <a href="#">Mads Kjaer</a>
           </p>
 
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-            enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat
-            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-            sunt in culpa qui officia deserunt mollit anim id est laborum.
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
 
-          <div class="my-4" style="height: 300px">
-            <img src="./third.jpg" class="img-fluid rounded h-100 w-50" alt="Flower Image" />
-          </div>
-          <figcaption class="figure-caption mt-2 fst-italic">
-            This is a beautiful flower
-          </figcaption>
+          <img src="./images/third.jpg" class="img-fluid rounded my-4 w-25" alt="flower" />
 
           <p>
-            Vivamus vitae nulla dolor. Suspendisse eu lacinia justo.
-            Vestibulum a felis ante, non aliquam leo. Aliquam eleifend, est
-            viverra semper luctus, metus purus commodo elit.
+            Vivamus vitae nulla dolor. Suspendisse eu lacinia justo. Vestibulum
+            a felis ante.
           </p>
         </article>
-        <hr class="my-5" />
 
-        <section id="comments" class="mb-5">
+        <section class="mb-5">
           <h3 class="mb-4">Comments</h3>
 
-          <div class="comment-box d-flex gap-3 mb-4">
-            <div class="flex-shrink-0">
-              <i class="bi bi-person-circle fs-1"></i>
-            </div>
-            <div class="w-100">
-              <div class="row">
-                <div class="col-md-4">
-                  <span class="fw-bold text-decoration-underline">George Washington</span>
-                  <div class="comment-date text-muted small">
-                    on June 29th 2026 at 23:35
-                  </div>
-                </div>
-                <div class="col-md-8">
-                  <p class="mb-0">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  </p>
-                </div>
-              </div>
+          <div class="d-flex gap-3 mb-4">
+            <i class="bi bi-person-circle fs-1"></i>
+            <div>
+              <strong>George Washington</strong>
+              <div class="text-muted small">June 29th 2026</div>
+              <p class="mb-0">Beautiful article</p>
             </div>
           </div>
 
-          <div class="comment-box d-flex comment-highlight gap-3 mb-4 p-3 rounded bg-body-tertiary">
-            <div class="flex-shrink-0">
-              <i class="bi bi-person-circle fs-1"></i>
-            </div>
-            <div class="w-100">
-              <div class="row">
-                <div class="col-md-4">
-                  <span class="fw-bold text-decoration-underline">Benjamin Franklin</span>
-                  <div class="comment-date text-muted small">
-                    on June 29th 2026 at 23:40
-                  </div>
-                </div>
-                <div class="col-md-8">
-                  <p class="mb-0">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Ut enim ad minim veniam.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="comment-box d-flex gap-3 mb-4">
-            <div class="flex-shrink-0">
-              <i class="bi bi-person-circle fs-1"></i>
-            </div>
-            <div class="w-100">
-              <div class="row">
-                <div class="col-md-4">
-                  <span class="fw-bold text-decoration-underline">Barack Obama</span>
-                  <div class="comment-date text-muted small">
-                    on June 29th 2026 at 23:59
-                  </div>
-                </div>
-                <div class="col-md-8">
-                  <p class="mb-0">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  </p>
-                </div>
-              </div>
+          <div class="d-flex gap-3 mb-4 p-3 rounded comment-highlight">
+            <i class="bi bi-person-circle fs-1"></i>
+            <div>
+              <strong>Benjamin Franklin</strong>
+              <div class="text-muted small">June 29th 2026</div>
+              <p class="mb-0">Very calming read.</p>
             </div>
           </div>
         </section>
-        <hr class="my-5" />
 
-        <section class="mb-5 bg-body-tertiary p-4 rounded border ">
+        <section class="bg-body-tertiary p-4 rounded border mb-5">
           <h3 class="mb-4">Post a comment</h3>
+
           <form>
-            <div class="mb-3 row">
-              <label for="name" class="col-sm-2 col-form-label fw-bold">Name</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="name" />
-              </div>
-            </div>
-            <div class="mb-3 row">
-              <label for="email" class="col-sm-2 col-form-label fw-bold">E-mail</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="email" />
-              </div>
-            </div>
-            <div class="mb-3 row">
-              <label for="website" class="col-sm-2 col-form-label fw-bold">Website</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="website" />
-              </div>
+            <div class="mb-3">
+              <label class="form-label fw-bold">Name</label>
+              <input type="text" class="form-control" />
             </div>
 
-            <div class="mb-3 row">
-              <label for="comment" class="col-sm-2 me- col-form-label fw-bold">Comment</label>
-              <div class="col-sm-10">
-                <textarea class="form-control" id="comment" rows="4"></textarea>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-10 offset-sm-2">
-                <button type="submit" class="btn btn-lavender px-4">Post comment</button>
-              </div>
+            <div class="mb-3">
+              <label class="form-label fw-bold">Email</label>
+              <input type="email" class="form-control" />
             </div>
 
+            <div class="mb-3">
+              <label class="form-label fw-bold">Comment</label>
+              <textarea class="form-control" rows="4"></textarea>
+            </div>
+
+            <button class="btn btn-lavender">Post Comment</button>
           </form>
         </section>
       </div>
+
       <aside class="col-md-4">
-        <div class="sidebar-widget mb-5">
-          <h4>Categories</h4>
-          <ul class="list-unstyled mb-0">
-            <li><a href="#" class="text-decoration-none">Lorem ipsum dolor</a></li>
-            <li><a href="#" class="text-decoration-none">Sit amet consectetur</a></li>
-            <li><a href="#" class="text-decoration-none ">Adipisicing elit sed</a></li>
-            <li><a href="#" class="text-decoration-none ">Do eiusmod tempor</a></li>
-            <li><a href="#" class="text-decoration-none ">Incididunt ut labore</a></li>
-          </ul>
+        <div class="card mb-4">
+          <div class="card-body">
+            <h4 class="card-title">Categories</h4>
+            <ul class="list-unstyled mb-0">
+              <li><a href="#">Nature</a></li>
+              <li><a href="#">Flowers</a></li>
+              <li><a href="#">Lifestyle</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="sidebar-widget">
-          <h4>Archives</h4>
-          <ul class="list-unstyled mb-0">
-            <li><a href="#" class="text-decoration-none ">December 2008</a></li>
-            <li><a href="#" class="text-decoration-none ">January 2009</a></li>
-            <li><a href="#" class="text-decoration-none ">February 2009</a></li>
-            <li><a href="#" class="text-decoration-none ">March 2009</a></li>
-            <li><a href="#" class="text-decoration-none ">April 2009</a></li>
-            <li><a href="#" class="text-decoration-none ">May 2009</a></li>
-            <li><a href="#" class="text-decoration-none ">June 2009</a></li>
-          </ul>
+
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Archives</h4>
+            <ul class="list-unstyled mb-0">
+              <li><a href="#">June 2026</a></li>
+              <li><a href="#">May 2026</a></li>
+            </ul>
+          </div>
         </div>
       </aside>
     </div>
-    <hr class="my-5" />
   </div>
 
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <h5>About</h5>
-          <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-        </div>
-        <div class="col-md-4 mb-4">
-          <h5>Blogroll</h5>
-          <ul class="list-unstyled small">
-            <li><a href="#">NETTUTS+</a></li>
-            <li><a href="#">FreelanceSwitch</a></li>
-            <li><a href="#">In The Woods</a></li>
-            <li><a href="#">Netsetter</a></li>
-            <li><a href="#">PSDTUTS+</a></li>
-          </ul>
-        </div>
-        <div class="col-md-4 mb-4">
-          <h5>Popular</h5>
-          <ul class="list-unstyled small">
-            <li><a href="#">This is the title of a blog post</a></li>
-            <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="#">Consectetur adipisicing elit</a></li>
-            <li><a href="#">Duis aute irure dolor</a></li>
-          </ul>
-        </div>
+  <footer class="py-4 mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <h5>About</h5>
+        <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5>Blogroll</h5>
+        <ul class="list-unstyled small">
+          <li><a href="#" class="text-decoration-none">NETTUTS+</a></li>
+          <li><a href="#" class="text-decoration-none">FreelanceSwitch</a></li>
+          <li><a href="#" class="text-decoration-none">In The Woods</a></li>
+          <li><a href="#" class="text-decoration-none">Netsetter</a></li>
+          <li><a href="#" class="text-decoration-none">PSDTUTS+</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5>Popular</h5>
+        <ul class="list-unstyled small">
+          <li><a href="#" class="text-decoration-none">This is the title of a blog post</a></li>
+          <li><a href="#" class="text-decoration-none">Lorem ipsum dolor sit amet</a></li>
+          <li><a href="#" class="text-decoration-none">Consectetur adipisicing elit</a></li>
+          <li><a href="#" class="text-decoration-none">Duis aute irure dolor</a></li>
+        </ul>
       </div>
     </div>
-  </footer>
-  <script src="./script.js"></script>
+  </div>
+</footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./script.js"></script>
 </body>
+
 </html>
