@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Task 2 - Final</title>
+    <title>Blue Tech Edition</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,178 +13,176 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
     />
     <style>
+      :root {
+        --primary-blue: #007bff;
+        --sky-blue: #00d4ff;
+        --dark-blue: #003366;
+        --bg-light: #f4f9ff;
+      }
       body {
         overflow-x: hidden;
+        background-color: var(--bg-light);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       }
-
       .concave-header {
         clip-path: ellipse(100% 100% at 50% 0%);
-        height: 50px;
+        height: 60px;
+        background: linear-gradient(90deg, var(--dark-blue), var(--sky-blue));
+      }
+      .profile-img {
+        border: 4px solid var(--sky-blue);
+        object-fit: cover;
+        box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+      }
+      .card-custom {
+        transition: all 0.3s ease;
+        background-size: cover;
+        background-position: center;
+        border-radius: 20px !important;
+        border: 1px solid rgba(0, 123, 255, 0.1);
+      }
+      .card-custom:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 20px rgba(0, 123, 255, 0.2);
+      }
+      .text-gradient-blue {
+        background: linear-gradient(90deg, var(--dark-blue), var(--primary-blue));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .btn-sky {
+        background: linear-gradient(135deg, var(--primary-blue), var(--sky-blue));
+        color: white;
+        border: none;
+      }
+      .btn-sky:hover {
+        opacity: 0.9;
+        color: white;
+      }
+      .icon-box {
+        background: white;
+        color: var(--primary-blue);
+        box-shadow: 0 4px 10px rgba(0, 123, 255, 0.1);
       }
     </style>
   </head>
-
   <body>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-1 offset-lg-1">
-          <div
-            class="concave-header d-none d-md-block bg-secondary w-50 mx-auto"
-          ></div>
+        <div class="col-md-2 offset-lg-1">
+          <div class="concave-header d-none d-md-block w-25 mx-auto"></div>
         </div>
       </div>
 
       <div class="row">
-        <div
-          class="col-lg-1 col-12 offset-lg-1 p-3 d-flex flex-column align-items-center"
-          style="min-height: auto; min-height: lg-100vh"
-        >
-          <div
-            class="rounded-circle bg-secondary bg-gradient mb-lg-4 mb-3"
+        <div class="col-lg-2 col-12 offset-lg-1 p-3 d-flex flex-column align-items-center">
+          <img 
+            src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=200&h=200&auto=format&fit=crop" 
+            class="rounded-circle profile-img mb-lg-4 mb-3" 
             style="width: 80px; height: 80px; flex-shrink: 0"
-          ></div>
-
-          <div
-            class="d-flex flex-row flex-lg-column gap-3 justify-content-center"
+            alt="Marwa Profile"
           >
-            <div
-              class="rounded-circle bg-secondary bg-gradient"
-              style="width: 50px; height: 50px; flex-shrink: 0"
-            ></div>
-            <div
-              class="rounded-circle bg-secondary bg-gradient"
-              style="width: 50px; height: 50px; flex-shrink: 0"
-            ></div>
-            <div
-              class="rounded-circle bg-secondary bg-gradient"
-              style="width: 50px; height: 50px; flex-shrink: 0"
-            ></div>
+          <div class="d-flex flex-row flex-lg-column gap-3 justify-content-center text-secondary">
+            <i class="bi bi-cpu-fill fs-3 text-primary-blue"></i>
+            <i class="bi bi-code-square fs-3"></i>
+            <i class="bi bi-layers-half fs-3"></i>
           </div>
         </div>
 
         <div class="col-lg-9 col-12 p-4 text-center text-lg-start">
-          <p class="lead">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-            iste excepturi minus porro blanditiis soluta aliquid obcaecati
-            repellendus aspernatur voluptates.
+          <h1 class="fw-bold text-gradient-blue">Digital Studio</h1>
+          <p class="lead text-muted">
+            Specializing in Modern Web Solutions and Streetwear Tech Aesthetics.
           </p>
 
           <div class="row g-3 mb-5">
             <div class="col-md-4 col-sm-6">
-              <div
-                class="card h-100 bg-secondary bg-gradient border-0 shadow-sm"
-                style="min-height: 120px"
-              ></div>
+              <div class="card h-100 card-custom border-0 shadow-sm" style="min-height: 150px; background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=400&auto=format&fit=crop');">
+              </div>
             </div>
             <div class="col-md-4 col-sm-6">
-              <div
-                class="card h-100 bg-secondary bg-gradient border-0 shadow-sm"
-                style="min-height: 120px"
-              ></div>
+              <div class="card h-100 card-custom border-0 shadow-sm" style="min-height: 150px; background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400&auto=format&fit=crop');">
+              </div>
             </div>
             <div class="col-md-4 col-12">
-              <div
-                class="card h-100 bg-secondary bg-gradient border-0 shadow-sm"
-                style="min-height: 120px"
-              ></div>
+              <div class="card h-100 card-custom border-0 shadow-sm" style="min-height: 150px; background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=400&auto=format&fit=crop');">
+              </div>
             </div>
           </div>
 
           <div class="row g-4 justify-content-center mt-4">
             <div class="col-lg-4 col-md-4 col-12 text-center">
-              <div
-                class="rounded-circle bg-secondary bg-gradient mb-3 mx-auto"
-                style="width: 60px; height: 60px"
-              ></div>
-              <h4 class="text-uppercase small fw-bold">lorem</h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Deleniti in
-              </p>
+              <div class="rounded-circle icon-box d-flex align-items-center justify-content-center mb-3 mx-auto" style="width: 70px; height: 70px">
+                <i class="bi bi-cloud-check fs-2"></i>
+              </div>
+              <h4 class="text-uppercase small fw-bold">Cloud Ready</h4>
+              <p class="small text-muted">Scalable web structures developed with ITI best practices.</p>
             </div>
             <div class="col-lg-4 col-md-4 col-12 text-center">
-              <div
-                class="rounded-circle bg-secondary bg-gradient mb-3 mx-auto"
-                style="width: 60px; height: 60px"
-              ></div>
-              <h4 class="text-uppercase small fw-bold">lorem</h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Deleniti in
-              </p>
+              <div class="rounded-circle icon-box d-flex align-items-center justify-content-center mb-3 mx-auto" style="width: 70px; height: 70px">
+                <i class="bi bi-command fs-2"></i>
+              </div>
+              <h4 class="text-uppercase small fw-bold">UI Precision</h4>
+              <p class="small text-muted">Clean, sky-blue themed interfaces for high-end user experience.</p>
             </div>
             <div class="col-lg-4 col-md-4 col-12 text-center">
-              <div
-                class="rounded-circle bg-secondary bg-gradient mb-3 mx-auto"
-                style="width: 60px; height: 60px"
-              ></div>
-              <h4 class="text-uppercase small fw-bold">lorem</h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Deleniti in
-              </p>
+              <div class="rounded-circle icon-box d-flex align-items-center justify-content-center mb-3 mx-auto" style="width: 70px; height: 70px">
+                <i class="bi bi-shield-lock fs-2"></i>
+              </div>
+              <h4 class="text-uppercase small fw-bold">Secure Code</h4>
+              <p class="small text-muted">Implementing Secure Software Development Fundamentals.</p>
             </div>
           </div>
 
           <div class="row my-4">
             <div class="col-12 text-center">
-              <i
-                class="bi bi-caret-up-fill text-secondary d-block"
-                style="font-size: 1.5rem; margin-bottom: -12px"
-              ></i>
-              <hr class="border-secondary border-2 opacity-25" />
+              <i class="bi bi-chevron-double-down text-sky-blue d-block" style="font-size: 1.5rem;"></i>
+              <hr class="border-primary opacity-25" />
             </div>
           </div>
 
           <div class="row mt-5">
-            <div class="col-md-2 col-12">
-              <h2 class="fw-bold" style="font-style: italic">Lorem</h2>
+            <div class="col-md-3 col-12">
+              <h2 class="fw-bold text-primary-blue">Insight</h2>
             </div>
-            <div class="col-md-10 col-12 text-muted">
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non
-                delectus hic esse voluptates itaque quia velit earum autem sit
-                officia.
+            <div class="col-md-9 col-12 text-muted border-start border-3 border-info">
+              <p class="ps-3">
+                "The future of fashion and tech is overlapping. FUSION™ is the bridge between aesthetic design and functional development."
               </p>
             </div>
           </div>
 
           <div class="row mt-4 g-4 align-items-center">
             <div class="col-md-7 col-12">
-              <div
-                class="w-100 bg-secondary d-flex align-items-center justify-content-center"
-                style="height: 250px; border-radius: 5px"
-              >
-                <i class="bi bi-play-fill text-white fs-1"></i>
+              <div class="w-100 shadow-lg d-flex align-items-center justify-content-center" 
+                   style="height: 300px; border-radius: 20px; background: linear-gradient(rgba(0,123,255,0.2), rgba(0,123,255,0.2)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop'); background-size: cover;">
+                <i class="bi bi-play-fill text-white" style="font-size: 5rem;"></i>
               </div>
             </div>
             <div class="col-md-5 col-12">
+              <h5 class="fw-bold text-dark-blue text-uppercase">Project Showcase</h5>
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit
-                quam soluta facere beatae quas rem corporis cumque dolorum. Hic
-                temporibus accusantium repudiandae.
+                Dive into our latest web development projects featuring high-performance CSS animations and responsive Bootstrap layouts.
               </p>
+              <button class="btn btn-sky rounded-pill px-5 shadow-sm">View Demo</button>
             </div>
           </div>
 
           <div class="row g-3 mt-5">
-            <div class="col-md-4 col-sm-6">
-              <div
-                class="card h-100 bg-secondary bg-gradient border-0 shadow-sm"
-                style="min-height: 100px"
-              ></div>
+            <div class="col-md-4">
+              <div class="card h-100 border-0 bg-dark text-info p-3 text-center" style="border-radius: 15px;">
+                <span class="small fw-bold">STREETWEAR V.1</span>
+              </div>
             </div>
-            <div class="col-md-4 col-sm-6">
-              <div
-                class="card h-100 bg-secondary bg-gradient border-0 shadow-sm"
-                style="min-height: 100px"
-              ></div>
+            <div class="col-md-4">
+              <div class="card h-100 border-0 bg-primary text-white p-3 text-center" style="border-radius: 15px;">
+                <span class="small fw-bold">BOOTSTRAP 5.3</span>
+              </div>
             </div>
-            <div class="col-md-4 col-12">
-              <div
-                class="card h-100 bg-secondary bg-gradient border-0 shadow-sm"
-                style="min-height: 100px"
-              ></div>
+            <div class="col-md-4">
+              <div class="card h-100 border-0 bg-info text-white p-3 text-center" style="border-radius: 15px;">
+                <span class="small fw-bold">ITI JOURNEY</span>
+              </div>
             </div>
           </div>
         </div>
