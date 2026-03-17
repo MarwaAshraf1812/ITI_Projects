@@ -1,0 +1,32 @@
+$form-gap: 20px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+
+.form {
+  padding: 10px;
+
+  &-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $form-gap;
+  }
+
+  input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    flex: 1 1 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  .form-row input {
+    flex: 1 1 calc((100% - #{$form-gap}) / 2);
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .form-row input {
+    flex: 1 1 calc((100% - #{$form-gap * 2}) / 3);
+  }
+}

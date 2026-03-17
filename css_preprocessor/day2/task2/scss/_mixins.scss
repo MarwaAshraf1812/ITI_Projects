@@ -1,0 +1,23 @@
+@use "sass:math";
+
+@mixin CreateCol($numOfCols: 12, $screenName: "", $breakPoint: 0px) {
+  @if($screenName == "") {
+    @for $i from 1 through $numOfCols {
+      .col-#{$i} {
+        width: math.div($i, $numOfCols) * 100%;
+        float: left;
+        box-sizing: border-box;
+      }
+    }
+  } @else {
+    @media (min-width: $breakPoint) {
+      @for $i from 1 through $numOfCols {
+        .col-#{$screenName}-#{$i} {
+          width: math.div($i, $numOfCols) * 100%;
+          float: left;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+}

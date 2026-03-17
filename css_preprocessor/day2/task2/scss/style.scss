@@ -1,0 +1,9 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+@include CreateCol();
+
+@include CreateCol(12, "sm", $sm);
+@include CreateCol(12, "md", $md);
+@include CreateCol(12, "lg", $lg);
+@include CreateCol(12, "xl", $xl);

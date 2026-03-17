@@ -1,0 +1,27 @@
+.form {
+  padding: 10px;
+}
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  flex: 1 1 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .form-row input {
+    flex: 1 1 calc((100% - 20px) / 2);
+  }
+}
+@media (min-width: 1024px) {
+  .form-row input {
+    flex: 1 1 calc((100% - 40px) / 3);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
