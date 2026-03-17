@@ -1,0 +1,54 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.concave-header {
+  display: none;
+  clip-path: ellipse(100% 100% at 50% 0%);
+  height: 60px;
+  width: 25%;
+  margin: 0 auto;
+  @include gradient-horizontal($dark-blue, $sky-blue)
+}
+.profile-img {
+  border-radius: 50%;
+  border: 4px solid $sky-blue;
+  object-fit: cover;
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  box-shadow: 0 0 15px rgba($sky-blue, 0.4);
+  margin-bottom: 12px;
+  @include respond-lg { margin-bottom: 24px; }
+}
+
+.card-custom {
+  @include transition();
+  background-size: cover;
+  background-position: center;
+  border-radius: $border-radius-card;
+  border: 1px solid rgba($primary-blue, 0.1);
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba($primary-blue, 0.2);
+  }
+}
+
+.text-gradient-blue {
+  @include gradient-text($dark-blue, $primary-blue);
+}
+
+.btn-sky {
+  @include gradient-horizontal($dark-blue, $sky-blue);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+
+  &:hover {
+    opacity: 0.9;
+    color: white;
+  }
+}
+
+

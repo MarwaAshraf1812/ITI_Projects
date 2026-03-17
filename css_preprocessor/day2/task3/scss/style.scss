@@ -1,0 +1,258 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+@use 'base' as *;
+@use 'components' as *;
+
+.container-fluid {
+  width: 100%;
+  padding: 0 16px;
+}
+
+.page-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sidebar {
+  @include flex(column, center, flex-start);
+  padding: 16px;
+  width: 100%;
+
+  @include respond-lg {
+    width: 18%;
+    margin-left: 8.333%;
+  }
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+  padding: 24px;
+  text-align: center;
+
+  @include respond-lg {
+    text-align: left;
+  }
+}
+
+.sidebar-icons {
+  @include flex(row, center, center);
+  gap: 16px;
+
+  @include respond-lg {
+    flex-direction: column;
+  }
+
+  i {
+    font-size: 1.5rem;
+    color: $text-muted;
+  }
+}
+
+.page-title {
+  font-weight: 700;
+  font-size: 2.2rem;
+  @include gradient-text($dark-blue, $primary-blue);
+  margin-bottom: 8px;
+}
+
+.lead {
+  color: $text-muted;
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 48px;
+
+  @include respond-md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card-custom {
+  min-height: 150px;
+  border-radius: $border-radius-card;
+  border: 1px solid rgba($primary-blue, 0.1);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all $transition-speed ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba($primary-blue, 0.2);
+  }
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-top: 48px;
+  justify-items: center;
+
+  @include respond-md {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.feature-item {
+  text-align: center;
+
+  .icon-box {
+    @include flex();
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    color: $primary-blue;
+    @include circle-shadow($primary-blue);
+    margin: 0 auto 16px;
+
+    i {
+      font-size: 1.75rem;
+    }
+  }
+
+  h4 {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-width: 700;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 0.875rem;
+    color: $text-muted;
+    margin: 0;
+  }
+}
+
+
+.section-divider {
+  text-align: center;
+  margin: 32px 0;
+
+  i {
+    font-size: 1.5rem;
+    color: $sky-blue;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid rgba($primary-blue, 0.25);
+  }
+}
+
+.insight-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 48px;
+
+  .insight-label {
+    width: 100%;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $primary-blue;
+
+    @include respond-md {
+      width: 22%;
+    }
+  }
+
+  .insight-text {
+    flex: 1;
+    color: $text-muted;
+    border-left: 3px solid $info;
+    padding-left: 16px;
+    font-size: 0.95rem;
+  }
+}
+
+.showcase-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.showcase-video {
+  width: 100%;
+  height: 300px;
+  border-radius: $border-radius-card;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  @include flex();
+
+  @include respond-md {
+    width: 56%;
+  }
+
+  i {
+    font-size: 5rem;
+    color: $white;
+  }
+}
+
+.showcase-text {
+  flex: 1;
+
+  h5 {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $dark-blue;
+    margin-bottom: 12px;
+  }
+
+  p {
+    color: $text-muted;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+  }
+}
+
+.badges-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 48px;
+
+  @include respond-md {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.badge-card {
+  border-radius: 15px;
+  padding: 16px;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  &--dark {
+    background: $dark;
+    color: $info;
+  }
+
+  &--blue {
+    background: $primary-blue;
+    color: $white;
+  }
+
+  &--info {
+    background: $info;
+    color: $white;
+  }
+}

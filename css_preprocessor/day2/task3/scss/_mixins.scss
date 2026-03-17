@@ -1,0 +1,31 @@
+@use 'variables' as *;
+
+@mixin gradient-horizontal($from, $to, $deg: 90deg) {
+  background: linear-gradient(#{$deg}, $from, $to);
+}
+
+@mixin gradient-text($from, $to, $deg: 90deg) {
+  @include gradient-horizontal($from, $to ,$deg);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin circle-shadow($color, $blur: 10px, $alpha: 0.1) {
+  box-shadow: 0 4px $blur rgba($color, $alpha);
+}
+
+@mixin flex($dir: row, $align: center, $justify: center) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin transition(){
+  transition: all $transition-speed ease;
+}
+
+@mixin respond-md { @media (min-width: $bp-md) { @content; } }
+@mixin respond-lg { @media (min-width: $bp-lg) { @content; } }
+ 
