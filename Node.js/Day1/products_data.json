@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "productName": "labtop",
+    "price": "14000"
+  },
+  {
+    "id": 2,
+    "productName": "G7 Phone",
+    "price": "9000"
+  },
+  {
+    "id": 3,
+    "productName": "curve screen",
+    "price": 9000
+  },
+  {
+    "id": 5,
+    "productName": "screen",
+    "price": 9000
+  },
+  {
+    "id": 6,
+    "productName": "tablet",
+    "price": 60000
+  }
+]
