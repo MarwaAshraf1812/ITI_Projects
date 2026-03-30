@@ -1,0 +1,55 @@
+@use "variables" as *;
+
+.main {
+  text-align: center;
+
+  &-title {
+    color: $primary-color;
+  }
+
+  &-subtitle {
+    color: $secondary-color;
+  }
+  &-btn {
+    background-color: $primary-color;
+    color: white;
+    border-radius: 5px;
+    width: 200px;
+    height: 40px;
+    border: none;
+  }
+  &-btn:hover {
+    background-color: $secondary-color;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+$content-fonts: (
+  "18px": 18px,
+  "16px": 16px,
+  "14px": 14px,
+);
+
+@each $name, $size in $content-fonts {
+  .font-#{$name} {
+    p {
+      font-size: $size;
+    }
+  }
+}
+
+.finish-btn {
+  width: 100%;
+  background-color: $primary-color;
+  color: white;
+  border-radius: 5px;
+  height: 40px;
+  border: none;
+}
+
+@media (min-width: 768px) {
+  .finish-btn {
+    width: 50%;
+  }
+}

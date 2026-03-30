@@ -1,0 +1,51 @@
+.main {
+  text-align: center;
+}
+.main-title {
+  color: #007bff;
+}
+.main-subtitle {
+  color: #6c757d;
+}
+.main-btn {
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  width: 200px;
+  height: 40px;
+  border: none;
+}
+.main-btn:hover {
+  background-color: #6c757d;
+  color: white;
+  cursor: pointer;
+}
+
+.font-18px p {
+  font-size: 18px;
+}
+
+.font-16px p {
+  font-size: 16px;
+}
+
+.font-14px p {
+  font-size: 14px;
+}
+
+.finish-btn {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  height: 40px;
+  border: none;
+}
+
+@media (min-width: 768px) {
+  .finish-btn {
+    width: 50%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
