@@ -1,6 +1,11 @@
 import * as authService from "./auth.service.js";
 import { registerSchema, loginSchema } from "./auth.validation.js";
 
+/**
+ * @desc    Register a new user account
+ * @route   POST /api/auth/register
+ * @access  Public
+ */
 export const register = async(req, res) => {
   try {
     const {error, value} = registerSchema.validate(req.body);
@@ -16,6 +21,11 @@ export const register = async(req, res) => {
   }
 }
 
+/**
+ * @desc    Authenticate user & get token
+ * @route   POST /api/auth/login
+ * @access  Public
+ */
 export const login = async(req, res) => {
   try {
     const {error, value} = loginSchema.validate(req.body);
@@ -38,6 +48,11 @@ export const login = async(req, res) => {
   }
 }
 
+/**
+ * @desc    Logout user & clear cookie
+ * @route   POST /api/auth/logout
+ * @access  Public / Private
+ */
 export const logout = async (req, res) => {
   res.clearCookie("token", {
     httpOnly: true,
