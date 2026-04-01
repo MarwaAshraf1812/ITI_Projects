@@ -1,4 +1,5 @@
 import Product, { Category } from '../model.js';
+import mongoose from 'mongoose';
 
 export const createCategory = async(req, res, next) => {
   try {
@@ -31,6 +32,11 @@ export const getAllCategories = async(req, res, next) => {
 export const getProductsByCategory = async(req, res, next) => {
   try {
     const { id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      const error = new Error("Invalid format for id");
+      error.statusCode = 400;
+      throw error;
+    }
     const products = await Product.find({ category: id });
     if(products.length === 0) {
       const error = new Error("No products found for this category");

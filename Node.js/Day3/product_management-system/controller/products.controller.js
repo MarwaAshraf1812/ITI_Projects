@@ -1,4 +1,5 @@
 import Product from "../model.js";
+import mongoose from "mongoose";
 
 export const createProduct = async(req, res, next) => {
   try {
@@ -31,6 +32,11 @@ export const getAllProducts = async(req, res, next) => {
 export const getProductById = async(req, res, next) => {
   try {
     const { id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      const error = new Error("Invalid format for id");
+      error.statusCode = 400;
+      throw error;
+    }
     const product = await Product.findById(id).populate('category', 'categoryName');
     if(!product) {
       const error = new Error("Product not found");
@@ -48,6 +54,11 @@ export const updateProduct = async(req, res, next) => {
   try {
     console.log("Body we received:", req.body);
     const {id} = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      const error = new Error("Invalid format for id");
+      error.statusCode = 400;
+      throw error;
+    }
     const data = req.body;
     const updatedProduct = await Product.findByIdAndUpdate(id, data, { new: true });
     if(!updatedProduct) {
@@ -64,6 +75,11 @@ export const updateProduct = async(req, res, next) => {
 export const deleteProduct = async(req, res, next) => {
   try {
     const {id} = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      const error = new Error("Invalid format for id");
+      error.statusCode = 400;
+      throw error;
+    }
     const deletedProduct = await Product.findByIdAndDelete(id);
     if(!deletedProduct) {
       const error = new Error("Product not found");
