@@ -15,7 +15,7 @@ router.route("/")
 
 router.route("/:id")
   .get(getProductById)
-  .put(updateProduct)
+  .patch(updateProduct)
   .delete(deleteProduct);
 
 export default router;

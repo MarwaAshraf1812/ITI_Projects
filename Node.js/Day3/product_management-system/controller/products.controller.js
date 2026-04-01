@@ -2,11 +2,11 @@ import Product from "../model.js";
 
 export const createProduct = async(req, res, next) => {
   try {
-    const { productName, price } = req.body;
-    if (!productName || !price) {
-      return res.status(400).json({ message: "Product name and price are required" });
+    const { productName, price, category } = req.body;
+    if (!productName || !price || !category) {
+      return res.status(400).json({ message: "Product name, price, and category are required" });
     }
-    const newProduct = new Product({ productName, price });
+    const newProduct = new Product({ productName, price, category });
     await newProduct.save();
     res.status(201).json({ message: "Product created successfully", product: newProduct });
   } catch (error) {
@@ -16,7 +16,7 @@ export const createProduct = async(req, res, next) => {
 
 export const getAllProducts = async(req, res, next) => {
   try {
-    const products = await Product.find();
+    const products = await Product.find().populate('category', 'categoryName');
     if(products.length === 0) {
       const error = new Error("No products found");
       error.statusCode = 404;
@@ -31,7 +31,7 @@ export const getAllProducts = async(req, res, next) => {
 export const getProductById = async(req, res, next) => {
   try {
     const { id } = req.params;
-    const product = await Product.findById(id);
+    const product = await Product.findById(id).populate('category', 'categoryName');
     if(!product) {
       const error = new Error("Product not found");
       error.statusCode = 404;
