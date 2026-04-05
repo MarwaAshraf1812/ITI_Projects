@@ -1,7 +1,7 @@
-import Product from "../model.js";
+import Product from "../models/product.model.js";
 import mongoose from "mongoose";
 
-export const createProduct = async(req, res, next) => {
+export const createProduct = async (req, res, next) => {
   try {
     const { productName, price, category } = req.body;
     if (!productName || !price || !category) {
@@ -15,21 +15,29 @@ export const createProduct = async(req, res, next) => {
   }
 }
 
-export const getAllProducts = async(req, res, next) => {
+export const getAllProducts = async (req, res, next) => {
   try {
     const products = await Product.find().populate('category', 'categoryName');
-    if(products.length === 0) {
+    if (products.length === 0) {
       const error = new Error("No products found");
       error.statusCode = 404;
       throw error;
     }
-    res.status(200).json({ products });
+    
+    const { username, role } = req.user;
+
+    res.status(200).json({ 
+      success: true,
+      username,
+      role,
+      products 
+    });
   } catch (error) {
     next(error);
   }
 }
 
-export const getProductById = async(req, res, next) => {
+export const getProductById = async (req, res, next) => {
   try {
     const { id } = req.params;
     if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -38,7 +46,7 @@ export const getProductById = async(req, res, next) => {
       throw error;
     }
     const product = await Product.findById(id).populate('category', 'categoryName');
-    if(!product) {
+    if (!product) {
       const error = new Error("Product not found");
       error.statusCode = 404;
       throw error;
@@ -50,10 +58,10 @@ export const getProductById = async(req, res, next) => {
 }
 
 
-export const updateProduct = async(req, res, next) => {
+export const updateProduct = async (req, res, next) => {
   try {
     console.log("Body we received:", req.body);
-    const {id} = req.params;
+    const { id } = req.params;
     if (!mongoose.Types.ObjectId.isValid(id)) {
       const error = new Error("Invalid format for id");
       error.statusCode = 400;
@@ -61,7 +69,7 @@ export const updateProduct = async(req, res, next) => {
     }
     const data = req.body;
     const updatedProduct = await Product.findByIdAndUpdate(id, data, { new: true });
-    if(!updatedProduct) {
+    if (!updatedProduct) {
       const error = new Error("Product not found");
       error.statusCode = 404;
       throw error;
@@ -72,16 +80,16 @@ export const updateProduct = async(req, res, next) => {
   }
 }
 
-export const deleteProduct = async(req, res, next) => {
+export const deleteProduct = async (req, res, next) => {
   try {
-    const {id} = req.params;
+    const { id } = req.params;
     if (!mongoose.Types.ObjectId.isValid(id)) {
       const error = new Error("Invalid format for id");
       error.statusCode = 400;
       throw error;
     }
     const deletedProduct = await Product.findByIdAndDelete(id);
-    if(!deletedProduct) {
+    if (!deletedProduct) {
       const error = new Error("Product not found");
       error.statusCode = 404;
       throw error;
