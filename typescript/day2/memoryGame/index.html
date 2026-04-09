@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game - TS Edition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body class="bg-dark text-white">
+
+    <div class="game-wrapper">
+        <div class="container py-5">
+            <header class="text-center mb-5">
+                <h1 class="main-title mb-2">Memory Game</h1>
+                <p class="subtitle">Match the pairs to reveal the secrets</p>
+            </header>
+
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-6">
+                    <div class="progress-glass">
+                        <div class="progress-label d-flex justify-content-between mb-2">
+                            <span>Game Progress</span>
+                            <span id="progress-percent">0%</span>
+                        </div>
+                        <div class="progress-container">
+                            <div id="game-progress" class="progress-bar-neon" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <main class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-4 justify-content-center" id="game-board">
+                <!-- Cards will be injected here -->
+            </main>
+
+            <footer class="text-center mt-5">
+                <button id="start-btn" class="btn-neon">
+                    <span>Start New Game</span>
+                </button>
+            </footer>
+        </div>
+    </div>
+
+    <script type="module" src="dist/main.js"></script>
+</body>
+</html>
