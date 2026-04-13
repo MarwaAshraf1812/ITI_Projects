@@ -69,11 +69,13 @@ export class MemoryGame {
     this.gameBoardElem.innerHTML = '';
     this.state.cards.forEach(card => {
       const cardHtml = `
-                <div class="col card-container ${card.isMatched ? 'matched' : ''}" data-id="${card.id}">
-                    <div class="card-inner ${card.isFlipped ? 'flipped' : ''}">
-                        <div class="card-back"></div>
-                        <div class="card-front">
-                            <img src="assets/images/${card.value}" alt="card">
+                <div class="col d-flex justify-content-center">
+                    <div class="card-container ${card.isMatched ? 'matched' : ''}" data-id="${card.id}" style="width: 100%;">
+                        <div class="card-inner ${card.isFlipped ? 'flipped' : ''}">
+                            <div class="card-back"></div>
+                            <div class="card-front">
+                                <img src="assets/images/${card.value}" alt="card">
+                            </div>
                         </div>
                     </div>
                 </div>

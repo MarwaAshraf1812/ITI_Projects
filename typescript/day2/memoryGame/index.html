@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory Game - TS Edition</title>
+    <title>Memory Game - Stitch Edition</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -11,27 +11,26 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body class="bg-dark text-white">
+    <nav class="navbar px-4 py-3 w-100" style="background: var(--glass-bg); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--glass-border); position: sticky; top: 0; z-index: 1000;">
+        <div class="container-fluid align-items-center">
+            <span class="navbar-brand fw-bold mb-0" style="color: var(--accent-color); letter-spacing: 1px;">👽 Stitch Memory 🌺</span>
+            <div class="d-flex align-items-center" style="width: 300px; max-width: 50%;">
+                <span class="me-3 fw-bold d-none d-sm-block text-uppercase" style="font-size: 0.75rem; letter-spacing: 1px; color: var(--accent-color);">🎮 Progress</span>
+                <div class="progress-container flex-grow-1 me-3" style="height: 8px;">
+                    <div id="game-progress" class="progress-bar-neon" style="width: 0%;"></div>
+                </div>
+                <span id="progress-percent" class="fw-bold fs-6" style="color: var(--accent-color); min-width: 45px; text-align: right;">0%</span>
+            </div>
+        </div>
+    </nav>
 
     <div class="game-wrapper">
         <div class="container py-5">
-            <header class="text-center mb-5">
-                <h1 class="main-title mb-2">Memory Game</h1>
-                <p class="subtitle">Match the pairs to reveal the secrets</p>
-            </header>
+            <header class="text-center mb-4">
+                <h1 class="main-title mb-2">Stitch Edition</h1>
+                <p class="subtitle mb-4">Match the pairs to reveal Stitch and his friends ✨🌴</p>
 
-            <div class="row justify-content-center mb-5">
-                <div class="col-md-6">
-                    <div class="progress-glass">
-                        <div class="progress-label d-flex justify-content-between mb-2">
-                            <span>Game Progress</span>
-                            <span id="progress-percent">0%</span>
-                        </div>
-                        <div class="progress-container">
-                            <div id="game-progress" class="progress-bar-neon" style="width: 0%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </header>
 
             <main class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-4 justify-content-center" id="game-board">
                 <!-- Cards will be injected here -->
@@ -39,7 +38,7 @@
 
             <footer class="text-center mt-5">
                 <button id="start-btn" class="btn-neon">
-                    <span>Start New Game</span>
+                    <span>🏄‍♂️ Start New Game 🌊</span>
                 </button>
             </footer>
         </div>
