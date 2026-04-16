@@ -1,0 +1,18 @@
+<div class="list-header">
+  <div>
+    <h1 class="list-title">My Tasks</h1>
+    <p class="list-subtitle">Manage your daily workflow effectively with style</p>
+  </div>
+</div>
+
+<div class="filters">
+  @for(tab of tabsName; track tab) {
+    <button class="filter-btn" [class.active]="tab === selectedTab" (click)="selectTab(tab)">{{ tab }}</button>
+  }
+</div>
+
+<div class="tasks-grid">
+  @for(task of tasks; track task.id) {
+    <app-task-card [task]="task" (taskUpdated)="updateTask($event)"></app-task-card>
+  }
+</div>
