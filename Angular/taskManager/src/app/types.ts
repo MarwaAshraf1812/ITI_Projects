@@ -6,6 +6,7 @@ export interface Task {
   priority: string;
   createdAt: Date;
   type: taskType;
+  isCompleted: boolean;
 }
 
 export type error  = {
@@ -19,5 +20,5 @@ export interface slide {
   subtitle: string;
   image: string;
 }
-
+export type popUpTypes = 'success' | 'error' | 'warning' | 'info';
 export type taskType = 'To Do' | 'In Progress' | 'Done';
