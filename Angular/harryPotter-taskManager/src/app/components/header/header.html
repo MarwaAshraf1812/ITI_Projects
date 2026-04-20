@@ -1,0 +1,30 @@
+<header class="hp-header glass-panel">
+  <div class="header-content">
+    <div class="logo-container">
+      <div class="snitch-icon">⚡</div>
+      <h1 class="app-title">Hogwarts Tasks</h1>
+    </div>
+    <nav class="main-nav">
+      <ul class="nav-links">
+        <li><a routerLink="/home" routerLinkActive="active-link" class="nav-item">Home</a></li>
+        <li><a routerLink="/about" routerLinkActive="active-link" class="nav-item">About</a></li>
+        <li><a routerLink="/task-manager" routerLinkActive="active-link" class="nav-item">Task Manager</a></li>
+        <li><a routerLink="/tasks" routerLinkActive="active-link" class="nav-item">Tasks</a></li>
+      </ul>
+    </nav>
+    <div class="right-section">
+      <div class="auth-buttons">
+        <button (click)="toggleTheme()" class="theme-btn" title="Toggle Magical Lighting">
+          {{ isDarkMode ? '☀️' : '🌙' }}
+        </button>
+        <button routerLink="/login" class="btn btn-outline">Login</button>
+        <button routerLink="/register" class="btn btn-primary">Register</button>
+        
+        <div class="profile-avatar" title="Wizard Profile">
+          <div class="avatar-initial">M</div>
+          <div class="status-indicator"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

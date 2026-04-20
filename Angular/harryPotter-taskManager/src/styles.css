@@ -1,0 +1,73 @@
+:root {
+  --color-bg-main: #f9f6ef;
+  --color-bg-panel: rgba(255, 255, 255, 0.7);
+  --color-gold-light: #e6c25e;
+  --color-gold: #b8860b;
+  --color-gold-dark: #8b6508;
+  --color-text-main: #2c2f33;
+  --color-text-muted: #5c626b;
+
+  --color-gryffindor: #740001;
+  --color-slytherin: #1a472a;
+  --color-ravenclaw: #0e1a40;
+  --color-hufflepuff: #e3a000;
+
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Outfit', sans-serif;
+
+  --glass-border: 1px solid rgba(184, 134, 11, 0.3);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  --glass-blur: blur(16px);
+}
+
+body.dark-theme {
+  --color-bg-main: #0f111a;
+  --color-bg-panel: rgba(22, 27, 40, 0.85);
+  --color-gold-light: #fbe69b;
+  --color-gold: #d4af37;
+  --color-gold-dark: #aa8623;
+  --color-text-main: #e2e8f0;
+  --color-text-muted: #94a3b8;
+
+  --color-gryffindor: #9b2022;
+  --color-slytherin: #226437;
+  --color-ravenclaw: #1f3684;
+  --color-hufflepuff: #f3c233;
+
+  --glass-border: 1px solid rgba(212, 175, 55, 0.2);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --glass-blur: blur(12px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-main);
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(184, 134, 11, 0.08), transparent 30%),
+    radial-gradient(circle at 85% 30%, rgba(184, 134, 11, 0.08), transparent 30%);
+  color: var(--color-text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-gold-dark);
+  letter-spacing: 1px;
+}
+
+.glass-panel {
+  background: var(--color-bg-panel);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 12px;
+}

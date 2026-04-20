@@ -1,0 +1,70 @@
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.tasks-board {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 2rem;
+  padding: 1rem 1rem 3rem 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  justify-content: center;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.tasks-board::-webkit-scrollbar {
+  display: none;
+}
+
+.tasks-board > * {
+  min-width: 300px;
+  max-width: 450px;
+  flex: 1 1 30%;
+  flex-shrink: 0;
+}
+
+
+
+.pagination-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(184, 134, 11, 0.2);
+  border: 1px solid rgba(184, 134, 11, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: var(--color-gold);
+  box-shadow: 0 0 10px var(--color-gold);
+  transform: scale(1.2);
+}
+
+.empty-message {
+  width: 100%;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-style: italic;
+  padding: 3rem;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .tasks-board {
+    padding: 1rem 0;
+  }
+}

@@ -1,0 +1,22 @@
+<div class="task-card" [ngClass]="'house-' + task.house.toLowerCase()">
+  <div class="task-card-header">
+    <div class="task-badges">
+      <span class="badge" [ngClass]="'priority-' + task.priority.toLowerCase()">{{task.priority}}</span>
+      <span class="badge subject-spells">{{task.category}}</span>
+      <span class="badge status-tag" [ngClass]="'status-' + task.status.toLowerCase().replace(' ', '-')">{{task.status}}</span>
+    </div>
+  </div>
+  
+  <h3 class="task-title">{{task.title}}</h3>
+  <p class="task-desc">{{task.description}}</p>
+  
+  <div class="task-card-footer">
+    <span class="task-date">⏳ {{task.dueDate}}</span>
+    
+    <div class="card-actions">
+      <button class="edit-btn" title="Edit Task">✎</button>
+      <button class="delete-btn" title="Vanish Task">✖</button>
+      <button class="complete-btn" title="Mark as Completed">✓</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="task-manager-wrapper">
+  
+  <header class="manager-header">
+    <h1 class="sparkle-text">Magical Task Manager</h1>
+    <p>Conjure new assignments and track your recent activity</p>
+  </header>
+  
+  <app-task-panel></app-task-panel>
+
+  <section class="recent-activity-section">
+    <div class="section-header">
+      <div class="section-label">
+        <span class="magic-icon">📜</span> Recently Added
+      </div>
+      <p class="subtitle">Mock data shown for previewing your latest spells</p>
+    </div>
+
+    <div class="recent-list horizontal-list">
+      <app-task-list [tasks]="recentTasks"></app-task-list>
+    </div>
+
+    <div class="load-more-manager">
+      <button class="load-more-btn" routerLink="/tasks">
+        View All Assignments ➜
+      </button>
+    </div>
+  </section>
+
+</div>

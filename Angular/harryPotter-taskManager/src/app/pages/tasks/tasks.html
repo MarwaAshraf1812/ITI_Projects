@@ -1,0 +1,27 @@
+<div class="tasks-page-wrapper">
+  
+  <div class="tasks-header">
+    <div class="header-main">
+      <h1 class="sparkle-text">Magical Task Board</h1>
+      <button class="create-btn" routerLink="/task-manager">
+        <span class="plus">✨</span> Create New Task
+      </button>
+    </div>
+  </div>
+
+  <div class="task-controls">
+    <div class="tabs-container">
+      <button class="tab-btn" [class.active]="activeTab === 'All'" (click)="setActiveTab('All')">All</button>
+      <button class="tab-btn" [class.active]="activeTab === 'To Do'" (click)="setActiveTab('To Do')">To Do</button>
+      <button class="tab-btn" [class.active]="activeTab === 'In Progress'" (click)="setActiveTab('In Progress')">In Progress</button>
+      <button class="tab-btn" [class.active]="activeTab === 'Done'" (click)="setActiveTab('Done')">Done</button>
+    </div>
+
+    <button class="delete-all-btn" (click)="deleteAllTasks()">
+      Vanish All Tasks ✖
+    </button>
+  </div>
+
+  <app-task-list [tasks]="tasks"></app-task-list>
+
+</div>

@@ -1,0 +1,158 @@
+.task-card {
+  background: var(--color-bg-panel);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 15px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+}
+
+.task-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+.house-gryffindor::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background: var(--color-gryffindor); }
+.house-ravenclaw::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background: var(--color-ravenclaw); }
+.house-hufflepuff::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background: var(--color-hufflepuff); }
+.house-slytherin::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background: var(--color-slytherin); }
+
+.task-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.task-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 20px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.priority-high { background: rgba(231, 76, 60, 0.2); color: #ff6b6b; border: 1px solid rgba(231, 76, 60, 0.4); }
+.priority-medium { background: rgba(241, 196, 15, 0.2); color: #ffd93d; border: 1px solid rgba(241, 196, 15, 0.4); }
+.priority-low { background: rgba(46, 204, 113, 0.2); color: #6bcfe0; border: 1px solid rgba(46, 204, 113, 0.4); }
+
+.subject-spells { background: rgba(155, 89, 182, 0.2); color: #d084ff; border: 1px solid rgba(155, 89, 182, 0.4); }
+.subject-potions { background: rgba(46, 204, 113, 0.2); color: #2ecc71; border: 1px solid rgba(46, 204, 113, 0.4); }
+
+.status-tag {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-text-main);
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 20px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.status-to-do { background: rgba(149, 165, 166, 0.2); color: #bdc3c7; border: 1px solid rgba(149, 165, 166, 0.4); }
+.status-in-progress { background: rgba(52, 152, 219, 0.2); color: #3498db; border: 1px solid rgba(52, 152, 219, 0.4); }
+.status-done { background: rgba(46, 204, 113, 0.2); color: #2ecc71; border: 1px solid rgba(46, 204, 113, 0.4); }
+
+.card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.edit-btn,
+.delete-btn {
+  background: transparent;
+  border: 1px solid rgba(184, 134, 11, 0.2);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--color-text-muted);
+}
+
+.edit-btn:hover {
+  background: rgba(184, 134, 11, 0.1);
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  transform: scale(1.1);
+}
+
+.delete-btn {
+  color: var(--color-text-muted);
+}
+
+.delete-btn:hover {
+  background: rgba(231, 76, 60, 0.1);
+  border-color: #ff6b6b;
+  color: #ff6b6b;
+  transform: scale(1.1);
+}
+
+.task-title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--color-gold);
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+
+.task-desc {
+  color: var(--color-text-main);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin-bottom: 1.2rem;
+  flex: 1;
+}
+
+.task-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(184, 134, 11, 0.1);
+  padding-top: 1rem;
+}
+
+.task-date {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.complete-btn {
+  background: rgba(46, 204, 113, 0.1);
+  border: 1px solid rgba(46, 204, 113, 0.3);
+  color: #2ecc71;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.complete-btn:hover {
+  background: #2ecc71;
+  color: #fff;
+  transform: scale(1.1);
+}
