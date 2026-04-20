@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output, OnChanges, SimpleChanges } from "@angular/core";
 import { TaskCardComponent } from "../taskCard/taskCard";
-import { Task } from "../../types";
+import { Task, popUpTypes } from "../../types";
 
 type tabsName = 'All' | 'To Do' | 'In Progress' | 'Done';
 
@@ -10,17 +10,30 @@ type tabsName = 'All' | 'To Do' | 'In Progress' | 'Done';
   templateUrl: './taskList.html',
   styleUrl: './taskList.css',
 })
-export class taskList {
+export class taskList implements OnChanges {
   tabsName: tabsName[] = ['All', 'To Do', 'In Progress', 'Done'];
   selectedTab: tabsName = 'All';
 
-  @Input() tasks: Task[] = [];
+  tasks: Task[] = [];
+  @Input() incomingTask: Task | null = null;
 
-  @Output() taskUpdated = new EventEmitter<Task>();
-  @Output() taskDeleted = new EventEmitter<string>();
   @Output() taskEdit = new EventEmitter<Task>();
+  @Output() triggerPopup = new EventEmitter<[popUpTypes, string]>();
 
-  
+  // task4
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['incomingTask'] && changes['incomingTask'].currentValue) {
+      const task = changes['incomingTask'].currentValue as Task;
+      const idx = this.tasks.findIndex(t => t.id === task.id);
+      
+      if (idx !== -1) {
+        this.tasks[idx] = task;
+      } else {
+        this.tasks.push(task);
+      }
+      this.tasks = [...this.tasks];
+    }
+  }
 
   selectTab(tab: tabsName) {
     this.selectedTab = tab;
@@ -34,10 +47,19 @@ export class taskList {
   }
 
   updateTask(taskUpdated: Task) {
-    this.taskUpdated.emit(taskUpdated);
+    const idx = this.tasks.findIndex(t => t.id === taskUpdated.id);
+    if(idx !== -1) {
+      this.tasks[idx] = taskUpdated;
+      this.tasks = [...this.tasks];
+      if (taskUpdated.isCompleted) {
+        this.triggerPopup.emit(['info', 'Task completed successfully']);
+      }
+    }
   }
+  
   deleteTask(taskId: string) {
-    this.taskDeleted.emit(taskId);
+    this.tasks = this.tasks.filter(task => task.id !== taskId);
+    this.triggerPopup.emit(['warning', 'Task deleted successfully']);
   }
   editTask(task: Task) {
     this.taskEdit.emit(task);

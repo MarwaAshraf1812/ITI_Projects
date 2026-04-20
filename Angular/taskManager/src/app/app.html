@@ -2,7 +2,7 @@
 <main class="main-container">
   <app-carousel></app-carousel>
   <app-task-input (sendTasks)="getData($event)" (triggerPopup)="showPopup($event[0], $event[1])" [isEditMode]="isEditMode" [currentTask]="currentTask" (cancelEdit)="cancelEdit()"></app-task-input>
-  <app-taskList [tasks]="tasks" (taskUpdated)="updateTask($event)" (taskDeleted)="deleteTask($event)" (taskEdit)="handleEditTask($event)"></app-taskList>
+  <app-taskList [incomingTask]="incomingTask" (taskEdit)="handleEditTask($event)" (triggerPopup)="showPopup($event[0], $event[1])"></app-taskList>
 </main>
 <app-footer></app-footer>
 

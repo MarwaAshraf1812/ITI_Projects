@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnChanges, SimpleChanges } from '@angular/core';
 import { Task, error, popUpTypes } from '../../types';
 import { v4 as uuid } from 'uuid';
 
@@ -13,36 +13,38 @@ export class TaskInputComponent {
   selectedPriority: string = 'medium';
   @Output() triggerPopup = new EventEmitter<[popUpTypes, string]>();
   @Input() isEditMode = false;
-  
-  private _currentTask: Task | null = null;
-  @Input() 
-  set currentTask(task: Task | null) {
-    this._currentTask = task;
-    
-    this.errors = {
-      title: '',
-      description: '',
-      dueDate: ''
-    };
-
-    if (task) {
-      this.selectedPriority = task.priority;
-    } else {
-      this.selectedPriority = 'medium';
-    }
-  }
-  
-  get currentTask(): Task | null {
-    return this._currentTask;
-  }
-
-  @Output() cancelEdit = new EventEmitter<void>();
-
   errors = {
     title: '',
     description: '',
     dueDate: ''
   };
+
+  @Input() currentTask: Task | null = null;
+  @Output() cancelEdit = new EventEmitter<void>();
+
+   // task 4
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('ngOnChanges Triggered: ', changes);
+    if(changes['currentTask']) {
+      const newValue = changes['currentTask'].currentValue;
+      const oldValue = changes['currentTask'].previousValue;
+      
+      console.log('Old value:', oldValue);
+      console.log('New value:', newValue);
+
+      if(newValue) {
+        this.selectedPriority = newValue.priority;
+      }
+      else {
+        this.selectedPriority = 'medium';
+      }
+       this.errors = {
+      title: '',
+      description: '',
+      dueDate: ''
+    };
+    }
+  }
 
   setPriority(priority: string) {
     this.selectedPriority = priority;
@@ -76,10 +78,10 @@ export class TaskInputComponent {
         const [year, month, day] = value.split('-');
         const selectedDate = new Date(Number(year), Number(month) - 1, Number(day));
         selectedDate.setHours(0, 0, 0, 0);
-        
+
         const today = new Date();
         today.setHours(0, 0, 0, 0);
-        
+
         if (selectedDate.getTime() < today.getTime()) {
           this.errors.dueDate = 'Due date cannot be in the past';
         }
