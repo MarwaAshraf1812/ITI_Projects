@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { AuthServiceService } from '../../services/authService.service';
+import { TasksService } from '../../services/tasks.service';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +10,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './header.css',
 })
 export class Header {
+  authService = inject(AuthServiceService);
+  taskService = inject(TasksService);
   isDarkMode = false;
 
   toggleTheme() {

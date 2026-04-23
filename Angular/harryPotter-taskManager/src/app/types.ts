@@ -7,6 +7,7 @@ export interface slide {
 
 export interface Task {
   id: string;
+  userId: string; 
   title: string;
   description: string;
   priority: string;
@@ -18,6 +19,7 @@ export interface Task {
 }
 
 export interface User {
+  id: string;
   username: string;
   email: string;
   password: string;
@@ -28,3 +30,9 @@ export type Tabs = 'All' | 'To Do' | 'In Progress' | 'Done';
 export type taskType = 'To Do' | 'In Progress' | 'Done';
 export type popUpTypes = 'success' | 'error' | 'warning' | 'info';
 export type house = 'Ravenclaw' | 'Gryffindor' | 'Slytherin' | 'Hufflepuff';
+
+export interface PopUpState {
+  type: popUpTypes;
+  message: string;
+  show: boolean;
+}

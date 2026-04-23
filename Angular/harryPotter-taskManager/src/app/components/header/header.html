@@ -13,17 +13,28 @@
       </ul>
     </nav>
     <div class="right-section">
+      <!-- <div class="gems-counter">
+       Total Gems {{ taskService.totalGems() }} 💎
+      </div> -->
       <div class="auth-buttons">
         <button (click)="toggleTheme()" class="theme-btn" title="Toggle Magical Lighting">
           {{ isDarkMode ? '☀️' : '🌙' }}
         </button>
+        @if(!authService.isAuthenticated()) {
         <button routerLink="/login" class="btn btn-outline">Login</button>
         <button routerLink="/register" class="btn btn-primary">Register</button>
-        
-        <div class="profile-avatar" title="Wizard Profile">
-          <div class="avatar-initial">M</div>
+        } @else {
+        <button (click)="authService.logout()" class="btn btn-outline">Logout</button>
+        }
+
+        @if(authService.isAuthenticated()) {
+        <div class="profile-avatar" [title]="authService.currentUser()?.username">
+          <div class="avatar-initial">
+            {{ authService.currentUser()?.username?.[0]?.toUpperCase() || 'W' }}
+          </div>
           <div class="status-indicator"></div>
         </div>
+        }
       </div>
     </div>
   </div>

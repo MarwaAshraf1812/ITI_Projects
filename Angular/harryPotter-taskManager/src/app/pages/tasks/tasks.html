@@ -10,18 +10,46 @@
   </div>
 
   <div class="task-controls">
-    <div class="tabs-container">
-      <button class="tab-btn" [class.active]="activeTab === 'All'" (click)="setActiveTab('All')">All</button>
-      <button class="tab-btn" [class.active]="activeTab === 'To Do'" (click)="setActiveTab('To Do')">To Do</button>
-      <button class="tab-btn" [class.active]="activeTab === 'In Progress'" (click)="setActiveTab('In Progress')">In Progress</button>
-      <button class="tab-btn" [class.active]="activeTab === 'Done'" (click)="setActiveTab('Done')">Done</button>
-    </div>
+  <div class="tabs-container">
+  <button 
+    class="tab-btn" 
+    [class.active]="taskService.selectedTab() === 'All'" 
+    (click)="taskService.setActiveTab('All')">All</button>
+
+  <button 
+    class="tab-btn" 
+    [class.active]="taskService.selectedTab() === 'To Do'" 
+    (click)="taskService.setActiveTab('To Do')">To Do</button>
+
+  <button 
+    class="tab-btn" 
+    [class.active]="taskService.selectedTab() === 'In Progress'" 
+    (click)="taskService.setActiveTab('In Progress')">In Progress</button>
+
+  <button 
+    class="tab-btn" 
+    [class.active]="taskService.selectedTab() === 'Done'" 
+    (click)="taskService.setActiveTab('Done')">Done</button>
+</div>
+
 
     <button class="delete-all-btn" (click)="deleteAllTasks()">
       Vanish All Tasks ✖
     </button>
   </div>
 
-  <app-task-list [tasks]="tasks"></app-task-list>
+  <app-task-list [tasks]="taskService.paginatedTasks()"></app-task-list>
+  <div class="pagination-controls">
+  <button 
+    [disabled]="taskService.currentPage() === 1" 
+    (click)="taskService.goToPage(taskService.currentPage() - 1)">Previous</button>
+    
+  <span>Page {{ taskService.currentPage() }} of {{ taskService.totalPages() }}</span>
+  
+  <button 
+    [disabled]="taskService.currentPage() === taskService.totalPages()" 
+    (click)="taskService.goToPage(taskService.currentPage() + 1)">Next</button>
+</div>
+
 
 </div>

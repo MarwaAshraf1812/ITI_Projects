@@ -1,6 +1,6 @@
 <div class="auth-container">
   <div class="auth-card login-card glass-panel">
-    
+
     <div class="auth-header">
       <div class="magic-icon login-icon">🗝️</div>
       <h2 class="auth-title">Welcome Back</h2>
@@ -9,40 +9,38 @@
 
 
     <form class="auth-form" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
-      
+
       <div class="form-group">
         <label for="email">Owl Post (Email)</label>
         <div class="input-wrapper">
           <span class="input-icon">🦉</span>
-          <input
-          [(ngModel)]="user.email"
-          name="email"
-          email
-          type="email"
-          id="email"
-          #email="ngModel"
-          placeholder="student@hogwarts.edu"
-          required>
+          <input [(ngModel)]="user.email" name="email" email type="email" id="email" #email="ngModel"
+            placeholder="student@hogwarts.edu" required>
         </div>
+        @if(email.touched && email.invalid) {
+        <p class="error-message">Please enter a valid magical email (Owl Post).</p>
+        }
       </div>
 
       <div class="form-group">
         <label for="password">Secret Password</label>
         <div class="input-wrapper">
           <span class="input-icon">🔒</span>
-          <input
-          [(ngModel)]="user.password"
-          name="password"
-          type="password"
-          id="password"
-          #password="ngModel"
-          placeholder="Alohomora..."
-          required>
+          <input [(ngModel)]="user.password" name="password" type="password" id="password" #password="ngModel"
+            placeholder="Alohomora..." required>
         </div>
-
+        @if(password.touched && password.invalid) {
+        <p class="error-message">Your secret password is missing or unclear.</p>
+        }
       </div>
       <button type="submit" class="submit-btn login-btn">Lumos (Login)</button>
     </form>
+    
+    @if(loginError()) {
+    <div class="error-banner">
+      <span>🚫</span> {{ loginError() }}
+    </div>
+  }
 
     <div class="auth-footer">
       <p>Haven't received your letter yet? <a routerLink="/register" class="auth-link">Enroll here</a></p>

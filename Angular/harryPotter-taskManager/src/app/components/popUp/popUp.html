@@ -1,0 +1,13 @@
+@if (popService.popUp().show) {
+  <div class="pop-up-container" [ngClass]="popService.popUp().type">
+    <div class="pop-up-content">
+      <span class="icon">
+        @if (popService.popUp().type === 'success') { ✨ }
+        @else if (popService.popUp().type === 'error') { ⚡ }
+        @else { 📜 }
+      </span>
+      <p class="message">{{ popService.popUp().message }}</p>
+    </div>
+    <div class="progress-bar"></div>
+  </div>
+}

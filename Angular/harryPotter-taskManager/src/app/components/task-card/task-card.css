@@ -52,16 +52,23 @@
 .subject-spells { background: rgba(155, 89, 182, 0.2); color: #d084ff; border: 1px solid rgba(155, 89, 182, 0.4); }
 .subject-potions { background: rgba(46, 204, 113, 0.2); color: #2ecc71; border: 1px solid rgba(46, 204, 113, 0.4); }
 
-.status-tag {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: var(--color-text-main);
-  font-size: 0.7rem;
-  padding: 0.15rem 0.5rem;
-  border-radius: 20px;
+.status-select {
+  border: none;
+  color: inherit;
+  padding: 2px 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.4px;
+  outline: none;
 }
+
+.status-select option {
+  background: #1a1c2c;
+  color: white;
+}
+
+
 
 .status-to-do { background: rgba(149, 165, 166, 0.2); color: #bdc3c7; border: 1px solid rgba(149, 165, 166, 0.4); }
 .status-in-progress { background: rgba(52, 152, 219, 0.2); color: #3498db; border: 1px solid rgba(52, 152, 219, 0.4); }

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
+import { AuthServiceService } from '../../services/authService.service';
 
 @Component({
   selector: 'app-login',
@@ -9,33 +10,15 @@ import { Router, RouterLink } from '@angular/router';
   styleUrl: './login.css',
 })
 export class Login {
-  constructor(private router: Router) { }
+  authService = inject(AuthServiceService);
+  loginError = signal<string | null>(null);
   user = {
     email: '',
     password: '',
   }
   onSubmit(form: NgForm) {
-    console.log(form.value);
-    if(form.invalid) {
-      return;
-    }
-
-    const savedUser = localStorage.getItem('user');
-    if(savedUser) {
-      const user = JSON.parse(savedUser);
-      if(user.email === this.user.email && user.password === this.user.password) {
-        localStorage.setItem('isAuthenticated', 'true');
-        this.router.navigate(['/tasks']);
-      } else {
-        alert('Invalid credentials');
-        this.user = {
-          email: '',
-          password: '',
-        }
-      }
-    } else {
-     alert('You are not registered yet')
-     this.router.navigate(['/register']);
-    }
+    if(form.invalid) return;
+    this.loginError.set(null);
+    this.authService.login(form.value);
   }
 }
