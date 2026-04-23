@@ -1,0 +1,38 @@
+{
+  "users": [
+    {
+      "username": "marwa",
+      "email": "marwa@hogwarts.edu",
+      "password": "123456789",
+      "confirmPassword": "123456789",
+      "school": "Ravenclaw",
+      "id": "7f3d00d8-cd5d-4c5b-9906-579c043e3785"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "task1",
+      "description": "task1",
+      "priority": "Low",
+      "category": "Potions",
+      "house": "Gryffindor",
+      "dueDate": "2026-04-25",
+      "status": "In Progress",
+      "isCompleted": false,
+      "id": "5146ed49-02fe-49ec-8ca9-bb61c3b42ac4",
+      "userId": "7f3d00d8-cd5d-4c5b-9906-579c043e3785"
+    },
+    {
+      "title": "task2",
+      "description": "ttttttttt",
+      "priority": "Low",
+      "category": "Potions",
+      "house": "Gryffindor",
+      "dueDate": "2026-04-25",
+      "status": "To Do",
+      "isCompleted": false,
+      "id": "259cc589-6462-4c87-b689-660305addca3",
+      "userId": "7f3d00d8-cd5d-4c5b-9906-579c043e3785"
+    }
+  ]
+}

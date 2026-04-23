@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import {  FormGroup, Validators, ReactiveFormsModule, FormControl } from '@angular/forms';
+import { Component, inject, signal } from '@angular/core';
+import { FormGroup, Validators, ReactiveFormsModule, FormControl } from '@angular/forms';
 import { User } from '../../types';
-import { Router, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
+import { AuthServiceService } from '../../services/authService.service';
 
 @Component({
   selector: 'app-register',
@@ -10,8 +11,8 @@ import { Router, RouterLink } from '@angular/router';
   styleUrl: './register.css',
 })
 export class Register {
-  constructor(private router: Router) {}
-
+  authService = inject(AuthServiceService);
+  registerError = signal<string | null>(null);
   registerForm = new FormGroup({
     username: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -25,25 +26,18 @@ export class Register {
       this.registerForm.markAllAsTouched();
       return;
     }
+    const { password, confirmPassword } = this.registerForm.value;
 
-    const existingUser = localStorage.getItem('user');
-    if (existingUser) {
-      alert('A wizard is already enrolled on this magical device! Proceed to Login.');
-      this.router.navigate(['/login']);
+
+    if(password !== confirmPassword){
+      this.registerError.set('Passwords do not match');
       return;
     }
 
-    const newUser: User = {
-      username: this.registerForm.value.username || '',
-      email: this.registerForm.value.email || '',
-      password: this.registerForm.value.password || '',
-      confirmPassword: this.registerForm.value.confirmPassword || '',
-      school: this.registerForm.value.school || '',
-    };
+    const newUser: User = this.registerForm.value as User || {};
     
-    localStorage.setItem('user', JSON.stringify(newUser));
-    console.log('Successfully Enrolled:', newUser);
-    this.router.navigate(['/login']);
+    this.authService.register(newUser);
+    this.registerError.set(null);
   }
 
 }

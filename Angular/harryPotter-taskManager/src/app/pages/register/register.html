@@ -71,13 +71,24 @@
         @if(registerForm.get('confirmPassword')?.touched && registerForm.get('confirmPassword')?.invalid){
         <p class="error-message">Confirm Password is required</p>
         }
+        @if(registerForm.get('confirmPassword')?.touched && registerForm.value.password !==
+        registerForm.value.confirmPassword) {
+        <p class="error-message">Passwords must match exactly.</p>
+        }
+
       </div>
 
-      
 
-      <button type="submit" class="submit-btn">Enroll Now</button>
+
+      <button type="submit" class="submit-btn" [disabled]="registerForm.invalid">Enroll Now</button>
 
     </form>
+
+    @if(registerError()) {
+    <div class="error-banner">
+      <span>🚫</span> {{ registerError() }}
+    </div>
+    }
 
     <div class="auth-footer">
       <p>Already received your letter? <a routerLink="/login" class="auth-link">Login here</a></p>

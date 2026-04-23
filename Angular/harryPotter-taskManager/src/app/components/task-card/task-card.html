@@ -1,22 +1,31 @@
-<div class="task-card" [ngClass]="'house-' + task.house.toLowerCase()">
+<div class="task-card" [ngClass]="'house-' + (task().house.toLowerCase() || '')">
   <div class="task-card-header">
     <div class="task-badges">
-      <span class="badge" [ngClass]="'priority-' + task.priority.toLowerCase()">{{task.priority}}</span>
-      <span class="badge subject-spells">{{task.category}}</span>
-      <span class="badge status-tag" [ngClass]="'status-' + task.status.toLowerCase().replace(' ', '-')">{{task.status}}</span>
+      <span class="badge" [ngClass]="'priority-' + (task().priority.toLowerCase() || '')">{{task().priority}}</span>
+      <span class="badge subject-spells">{{task().category}}</span>
+      <select 
+  class="badge status-select" 
+  [ngClass]="'status-' + task().status.toLowerCase().replace(' ', '-')"
+  [value]="task().status"
+  (change)="changeStatus(task().id, $any($event.target).value)">
+    <option value="To Do">To Do</option>
+    <option value="In Progress">In Progress</option>
+    <option value="Done">Done</option>
+</select>
+
     </div>
   </div>
   
-  <h3 class="task-title">{{task.title}}</h3>
-  <p class="task-desc">{{task.description}}</p>
+  <h3 class="task-title">{{task().title}}</h3>
+  <p class="task-desc">{{task().description}}</p>
   
   <div class="task-card-footer">
-    <span class="task-date">⏳ {{task.dueDate}}</span>
+    <span class="task-date">⏳ {{task().dueDate}}</span>
     
     <div class="card-actions">
-      <button class="edit-btn" title="Edit Task">✎</button>
-      <button class="delete-btn" title="Vanish Task">✖</button>
-      <button class="complete-btn" title="Mark as Completed">✓</button>
+      <button class="edit-btn" title="Edit Task" (click)="selectTask(task())">✎</button>
+      <button class="delete-btn" title="Vanish Task" (click)="deleteTask(task().id)">✖</button>
+      <button class="complete-btn" title="Mark as Completed" (click)="markTaskIsCompleted(task().id)">✓</button>
     </div>
   </div>
 </div>

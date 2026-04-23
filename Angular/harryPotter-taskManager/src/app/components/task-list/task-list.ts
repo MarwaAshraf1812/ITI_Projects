@@ -1,6 +1,7 @@
-import { Component, Input } from "@angular/core";
+import { Component, inject, input } from "@angular/core";
 import { Task } from "../../types";
 import { TaskCard } from "../task-card/task-card";
+import { TasksService } from "../../services/tasks.service";
 
 @Component({
   selector: 'app-task-list',
@@ -9,5 +10,6 @@ import { TaskCard } from "../task-card/task-card";
   styleUrl: './task-list.css',
 })
 export class TaskList {
-  @Input() tasks: Task[] = [];
+  tasksService = inject(TasksService);
+  tasks = input<Task[]>([]);
 }

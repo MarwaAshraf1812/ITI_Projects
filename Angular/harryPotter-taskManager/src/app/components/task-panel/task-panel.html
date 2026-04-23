@@ -1,60 +1,73 @@
- <div class="create-task-panel glass-panel">
-    <div class="panel-header">
-      <span class="magic-icon">📜</span>
-      <h2>New Assignment</h2>
+<div class="create-task-panel glass-panel">
+  <div class="panel-header">
+    <span class="magic-icon">📜</span>
+    <h2>New Assignment</h2>
+  </div>
+
+  <form class="task-form" [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-row">
+      <div class="form-group flex-2">
+        <label for="title">Scroll Title</label>
+        <input formControlName="title" type="text" id="title" placeholder="e.g., Practice Patronus Charm..." required>
+        @if(taskForm.get('title')?.invalid && taskForm.get('title')?.touched) {
+          <p class="error">Title must be at least 3 characters long</p>
+        }
+      </div>
+
+      <div class="form-group flex-1">
+        <label for="dueDate">Due Date</label>
+        <input formControlName="dueDate" type="date" id="dueDate" required>
+         @if(taskForm.get('dueDate')?.invalid && taskForm.get('dueDate')?.touched) {
+        <p class="error">Due date must be in the future</p>
+      }
+      </div>
     </div>
-    
-    <form class="task-form">
-      
-      <div class="form-row">
-        <div class="form-group flex-2">
-          <label for="title">Scroll Title</label>
-          <input type="text" id="title" placeholder="e.g., Practice Patronus Charm..." required>
-        </div>
-        
-        <div class="form-group flex-1">
-          <label for="dueDate">Due Date</label>
-          <input type="date" id="dueDate" required>
-        </div>
+
+    <div class="form-group">
+      <label for="description">Assignment Details</label>
+      <textarea formControlName="description" id="description" rows="3"
+        placeholder="Describe the magical steps required..."></textarea>
+        @if(taskForm.get('description')?.touched && taskForm.get('description')?.errors?.['minlength']) {
+    <p class="error-message">A wizard needs at least 5 letters for a clear spell.</p>
+  }
+    </div> 
+
+    <div class="form-row tri-column">
+      <div class="form-group">
+        <label for="priority">Priority</label>
+        <select formControlName="priority" id="priority">
+          <option value="High">High ⚠️</option>
+          <option value="Medium" selected>Medium ⚡</option>
+          <option value="Low">Low 🕯️</option>
+        </select>
       </div>
 
       <div class="form-group">
-        <label for="description">Assignment Details</label>
-        <textarea id="description" rows="3" placeholder="Describe the magical steps required..."></textarea>
+        <label for="category">Subject Category</label>
+        <select formControlName="category" id="category">
+          <option value="Potions">Potions 🧪</option>
+          <option value="Spells">Spells & Charms ✨</option>
+          <option value="Herbology">Herbology 🌱</option>
+          <option value="Quidditch">Quidditch 🧹</option>
+          <option value="Other">Other 📜</option>
+        </select>
       </div>
 
-      <div class="form-row tri-column">
-        <div class="form-group">
-          <label for="priority">Priority</label>
-          <select id="priority">
-            <option value="High">High ⚠️</option>
-            <option value="Medium" selected>Medium ⚡</option>
-            <option value="Low">Low 🕯️</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="category">Subject Category</label>
-          <select id="category">
-            <option value="Potions">Potions 🧪</option>
-            <option value="Spells">Spells & Charms ✨</option>
-            <option value="Herbology">Herbology 🌱</option>
-            <option value="Quidditch">Quidditch 🧹</option>
-            <option value="Other">Other 📜</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="house">House Affiliation</label>
-          <select id="house">
-            <option value="Gryffindor">Gryffindor 🦁</option>
-            <option value="Ravenclaw">Ravenclaw 🦅</option>
-            <option value="Hufflepuff">Hufflepuff 🦡</option>
-            <option value="Slytherin">Slytherin 🐍</option>
-          </select>
-        </div>
+      <div class="form-group">
+        <label for="house">House Affiliation</label>
+        <select formControlName="house" id="house">
+          <option value="Gryffindor">Gryffindor 🦁</option>
+          <option value="Ravenclaw">Ravenclaw 🦅</option>
+          <option value="Hufflepuff">Hufflepuff 🦡</option>
+          <option value="Slytherin">Slytherin 🐍</option>
+        </select>
       </div>
+    </div>
 
-      <button type="submit" class="submit-btn task-submit-btn">Conjure Task</button>
-    </form>
-  </div>
+    <button type="submit" class="task-submit-btn">
+      {{ taskService.selectedTask() ? 'Update Assignment ✨' : 'Enroll Now 🕊️' }}
+    </button>
+
+  </form>
+</div>

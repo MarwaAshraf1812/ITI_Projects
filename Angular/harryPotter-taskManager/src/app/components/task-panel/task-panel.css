@@ -145,6 +145,9 @@
   letter-spacing: 1.5px;
   text-transform: uppercase;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 10;
+  position: relative;
 }
 
 .task-submit-btn:hover {
@@ -155,6 +158,41 @@
 
 .task-submit-btn:active {
   transform: translateY(-1px) scale(1);
+}
+
+.error, .error-message {
+  color: #ff7675;  
+  font-size: 0.75rem;
+  margin-top: 5px;
+  margin-bottom: 0;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  animation: spellFadeIn 0.3s ease-out forwards;
+}
+
+.error::before, .error-message::before {
+  content: '⚡'; 
+  font-size: 0.8rem;
+}
+
+input.ng-invalid.ng-touched, 
+textarea.ng-invalid.ng-touched, 
+select.ng-invalid.ng-touched {
+  border-color: rgba(231, 76, 60, 0.5) !important;
+  box-shadow: 0 0 8px rgba(231, 76, 60, 0.2);
+}
+
+@keyframes spellFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes panelSlideIn {

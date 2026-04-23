@@ -1,16 +1,16 @@
 <div class="carousel-wrapper">
   
   <div class="tasks-board">
-    @for (task of tasks; track task.id) {
+    @for (task of tasks(); track task.id) {
       <app-task-card [task]="task"></app-task-card>
     } @empty {
       <p class="empty-message">No assignments found in the Pensieve...</p>
     }
   </div>
 
-  <div class="pagination-dots">
+  <!-- <div class="pagination-dots">
     <span class="dot active"></span>
     <span class="dot"></span>
     <span class="dot"></span>
-  </div>
+  </div> -->
 </div>

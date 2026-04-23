@@ -6,10 +6,18 @@
   padding: 2rem 1rem;
   animation: slideUp 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
+.error-banner {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid red;
+  color: red;
+  border-radius: 12px;
+  text-align: center;
+}
 
 .auth-card {
   width: 100%;
-  max-width: 500px; /* Slightly narrower than Register card */
+  max-width: 500px;
   padding: 3.5rem 3rem;
   border-radius: 20px;
   text-align: center;
@@ -17,7 +25,6 @@
   overflow: hidden;
 }
 
-/* Slytherin/Magic Green glowing line at the top for Login */
 .auth-card::before {
   content: '';
   position: absolute;

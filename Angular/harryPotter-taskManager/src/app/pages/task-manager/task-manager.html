@@ -16,7 +16,7 @@
     </div>
 
     <div class="recent-list horizontal-list">
-      <app-task-list [tasks]="recentTasks"></app-task-list>
+      <app-task-list [tasks]="tasksService.recentTasks()"></app-task-list>
     </div>
 
     <div class="load-more-manager">
