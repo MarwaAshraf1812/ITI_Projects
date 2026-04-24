@@ -27,5 +27,9 @@ export const routes: Routes = [
     path: 'task-manager',
     loadComponent: () => import('./pages/task-manager/task-manager').then(m => m.TaskManager), canActivate: [authGuard]
   },
+  {
+    path: 'profile',
+    loadComponent: () => import('./pages/profile/profile').then(m => m.Profile), canActivate: [authGuard]
+  },
   { path: '**', redirectTo: 'home' },
 ];

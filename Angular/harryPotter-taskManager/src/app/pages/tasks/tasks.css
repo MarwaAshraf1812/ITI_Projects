@@ -331,6 +331,41 @@
 .pagination-controls button::before {
   font-size: 1.1rem;
 }
+.search-container {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.search-wrapper {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 15px 12px 45px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(184, 134, 11, 0.3);
+  border-radius: 25px;
+  color: var(--color-text-main);
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #b8860b;
+  box-shadow: 0 0 15px rgba(184, 134, 11, 0.2);
+}
 
 
 

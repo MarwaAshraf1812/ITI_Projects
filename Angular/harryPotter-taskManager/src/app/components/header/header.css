@@ -176,6 +176,17 @@
   border: 2px solid var(--color-bg-main);
 }
 
+.profile-link {
+  text-decoration: none;
+  display: block; 
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.profile-link:hover {
+  transform: scale(1.1);
+}
+
+
 @keyframes float {
   0% { transform: translateY(0px) rotate(0deg); }
   50% { transform: translateY(-5px) rotate(5deg); }

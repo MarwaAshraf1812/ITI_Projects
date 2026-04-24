@@ -18,6 +18,8 @@ export class TasksService {
   tasks = signal<Task[]>([]);
   selectedTask = signal<Task | null>(null);
   selectedTab = signal<Tabs>('All');
+  searchQuery = signal<string>('');
+  sortBy = signal<string>('dueDate');
   currentPage = signal(1);
   pageSize = 3;
 
@@ -37,9 +39,14 @@ export class TasksService {
   filteredTasks = computed(() => {
     const tab = this.selectedTab();
     const all = this.tasks();
-    if (tab === 'All') return all;
-    return all.filter((t) => t.status === tab);
+    const searchQuery = this.searchQuery();
+    let filtered = tab === 'All' ? all : all.filter(t => t.status === tab);
+    if(searchQuery){
+      filtered = filtered.filter(t => t.title.toLowerCase().includes(searchQuery.toLowerCase()) || t.description.toLowerCase().includes(searchQuery.toLowerCase()));
+    }
+    return filtered;
   });
+
 
   paginatedTasks = computed(() => {
     const start = (this.currentPage() - 1) * this.pageSize;

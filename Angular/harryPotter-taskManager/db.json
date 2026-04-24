@@ -7,19 +7,103 @@
       "confirmPassword": "123456789",
       "school": "Ravenclaw",
       "id": "7f3d00d8-cd5d-4c5b-9906-579c043e3785"
+    },
+    {
+      "username": "harry",
+      "email": "harry@hogwarts.edu",
+      "password": "123456789",
+      "confirmPassword": "123456789",
+      "school": "Gryffindor",
+      "id": "98e3c945-c171-4228-909c-45532cc099e6"
+    },
+    {
+      "username": "harry",
+      "email": "harryPotter@hogwarts.edu",
+      "password": "123456789",
+      "confirmPassword": "123456789",
+      "school": "Gryffindor",
+      "id": "81cd084f-9db6-453f-ba60-f903f55592c2"
+    },
+    {
+      "username": "harry",
+      "email": "harry12@hogwarts.edu",
+      "password": "123456789",
+      "confirmPassword": "123456789",
+      "school": "Gryffindor",
+      "id": "3800f75d-4474-43e4-9e1b-ba085ebf1b8f"
     }
   ],
   "tasks": [
     {
-      "title": "task2",
-      "description": "ttttttttt",
+      "title": "task3",
+      "description": "task3",
+      "priority": "Low",
+      "category": "Potions",
+      "house": "Gryffindor",
+      "dueDate": "2026-04-26",
+      "status": "In Progress",
+      "isCompleted": false,
+      "id": "a194f800-24e9-4173-8a5e-c03aa4576430",
+      "userId": "98e3c945-c171-4228-909c-45532cc099e6"
+    },
+    {
+      "title": "updated task",
+      "description": "task4",
+      "priority": "Low",
+      "category": "Potions",
+      "house": "Gryffindor",
+      "dueDate": "2026-04-28",
+      "status": "Done",
+      "isCompleted": true,
+      "id": "c5fb3360-c69b-46be-ba90-6ca7270a2726"
+    },
+    {
+      "title": "task5",
+      "description": "task5",
       "priority": "Low",
       "category": "Potions",
       "house": "Gryffindor",
       "dueDate": "2026-04-25",
       "status": "To Do",
       "isCompleted": false,
-      "id": "259cc589-6462-4c87-b689-660305addca3"
+      "id": "c7faf937-962f-40d0-8b27-4f5ec16018f4",
+      "userId": "98e3c945-c171-4228-909c-45532cc099e6"
+    },
+    {
+      "title": "task2",
+      "description": "task2",
+      "priority": "Low",
+      "category": "Potions",
+      "house": "Gryffindor",
+      "dueDate": "2026-05-02",
+      "status": "Done",
+      "isCompleted": true,
+      "id": "84cebc73-b94d-48b3-8499-d67c36d20b34",
+      "userId": "7f3d00d8-cd5d-4c5b-9906-579c043e3785"
+    },
+    {
+      "title": "task3",
+      "description": "task3",
+      "priority": "Low",
+      "category": "Potions",
+      "house": "Gryffindor",
+      "dueDate": "2026-04-30",
+      "status": "Done",
+      "isCompleted": true,
+      "id": "99d1e758-c08a-4afc-9daa-eab1e8cbad47",
+      "userId": "3800f75d-4474-43e4-9e1b-ba085ebf1b8f"
+    },
+    {
+      "title": "task4",
+      "description": "task4",
+      "priority": "Low",
+      "category": "Potions",
+      "house": "Gryffindor",
+      "dueDate": "2026-04-25",
+      "status": "To Do",
+      "isCompleted": false,
+      "id": "718492ac-269e-46fb-bbf7-6519d974835d",
+      "userId": "3800f75d-4474-43e4-9e1b-ba085ebf1b8f"
     }
   ]
 }

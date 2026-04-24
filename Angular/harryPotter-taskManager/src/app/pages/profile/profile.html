@@ -1,0 +1,69 @@
+
+<div class="profile-container">
+  <div class="profile-layout">
+    <aside class="wizard-card glass-panel">
+      <div class="house-crest-bg"></div>
+      <div class="avatar-large">
+        {{ authService.currentUser()?.username?.[0] }}
+      </div>
+      <h2 class="wizard-name">{{ authService.currentUser()?.username }}</h2>
+      <p class="wizard-school">{{ authService.currentUser()?.school }} House</p>
+      
+      <div class="wizard-details">
+        <div class="detail-item">
+          <span class="label">Owl Post:</span>
+          <span class="value">{{ authService.currentUser()?.email }}</span>
+        </div>
+      </div>
+    </aside>
+
+
+    <main class="dashboard-content">
+      <h1 class="page-title">Magical Progress</h1>
+      
+      <div class="stats-grid">
+        <div class="stat-card glass-panel">
+          <span class="stat-icon">📜</span>
+          <div class="stat-info">
+            <span class="stat-value">{{ stats().total }}</span>
+            <span class="stat-label">Total Scroll</span>
+          </div>
+        </div>
+        <div class="stat-card glass-panel success">
+          <span class="stat-icon">🏆</span>
+          <div class="stat-info">
+            <span class="stat-value">{{ stats().completed }}</span>
+            <span class="stat-label">Spells Cast</span>
+          </div>
+        </div>
+        <div class="stat-card glass-panel warning">
+          <span class="stat-icon">⏳</span>
+          <div class="stat-info">
+            <span class="stat-value">{{ stats().pending }}</span>
+            <span class="stat-label">Pending Charms</span>
+          </div>
+        </div>
+      </div>
+
+      <section class="recent-activity glass-panel">
+        <h3 class="section-title">Recent Scrolls</h3>
+        <div class="activity-list">
+          @for(task of taskService.recentTasks(); track task.id) {
+            <div class="activity-item">
+              <span class="activity-bullet">✦</span>
+              <div class="activity-text">
+                <span class="task-title">{{ task.title }}</span>
+                <span class="task-status" [class.done]="task.isCompleted">
+                  {{ task.isCompleted ? 'Finished' : 'In Progress' }}
+                </span>
+              </div>
+            </div>
+          } @empty {
+            <p class="empty-msg">No magical history found yet...</p>
+          }
+        </div>
+      </section>
+    </main>
+
+  </div>
+</div>

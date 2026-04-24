@@ -13,6 +13,11 @@ import { TasksService } from '../../services/tasks.service';
 export class Tasks {
   taskService = inject(TasksService);
 
+  onSearch(event: Event) {
+    const target = event.target as HTMLInputElement;
+    this.taskService.searchQuery.set(target.value);
+  }
+
   deleteAllTasks() {
     this.taskService.deleteAllTasks();
   }

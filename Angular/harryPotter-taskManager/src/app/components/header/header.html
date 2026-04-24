@@ -28,12 +28,14 @@
         }
 
         @if(authService.isAuthenticated()) {
-        <div class="profile-avatar" [title]="authService.currentUser()?.username">
+        <a routerLink="/profile" class="profile-link">
+          <div class="profile-avatar" [title]="authService.currentUser()?.username">
           <div class="avatar-initial">
             {{ authService.currentUser()?.username?.[0]?.toUpperCase() || 'W' }}
           </div>
           <div class="status-indicator"></div>
         </div>
+        </a>
         }
       </div>
     </div>
