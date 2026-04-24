@@ -47,7 +47,6 @@ export class TasksService {
     return filtered;
   });
 
-
   paginatedTasks = computed(() => {
     const start = (this.currentPage() - 1) * this.pageSize;
     return this.filteredTasks().slice(start, start + this.pageSize);

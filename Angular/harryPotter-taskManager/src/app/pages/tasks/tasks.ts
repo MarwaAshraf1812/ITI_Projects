@@ -18,6 +18,7 @@ export class Tasks {
     this.taskService.searchQuery.set(target.value);
   }
 
+
   deleteAllTasks() {
     this.taskService.deleteAllTasks();
   }
