@@ -6,7 +6,10 @@
     "date": "March 24, 2024",
     "category": "Hardware",
     "time": "4m read time",
-    "tags": ["AI", "GPU", "Innovation"]
+    "tags": ["AI", "GPU", "Innovation"],
+    "likes": 120,
+    "dislikes": 5,
+    "comments": 15
   },
   {
     "id": 2,
@@ -15,7 +18,10 @@
     "date": "March 22, 2024",
     "category": "Gadgets",
     "time": "6m read time",
-    "tags": ["Apple", "AR", "VR"]
+    "tags": ["Apple", "AR", "VR"],
+    "likes": 85,
+    "dislikes": 2,
+    "comments": 8
   },
   {
     "id": 3,
@@ -24,7 +30,10 @@
     "date": "March 20, 2024",
     "category": "Software",
     "time": "5m read time",
-    "tags": ["OpenAI", "Video", "Generative AI"]
+    "tags": ["OpenAI", "Video", "Generative AI"],
+    "likes": 250,
+    "dislikes": 10,
+    "comments": 45
   },
   {
     "id": 4,
@@ -33,7 +42,10 @@
     "date": "March 18, 2024",
     "category": "Mobile",
     "time": "3m read time",
-    "tags": ["Mobile", "AI", "Privacy"]
+    "tags": ["Mobile", "AI", "Privacy"],
+    "likes": 42,
+    "dislikes": 1,
+    "comments": 3
   },
   {
     "id": 5,
@@ -42,7 +54,10 @@
     "date": "March 15, 2024",
     "category": "Business",
     "time": "2m read time",
-    "tags": ["Microsoft", "Partnership", "Cloud"]
+    "tags": ["Microsoft", "Partnership", "Cloud"],
+    "likes": 67,
+    "dislikes": 3,
+    "comments": 12
   },
   {
     "id": 6,
@@ -51,6 +66,9 @@
     "date": "March 12, 2024",
     "category": "Security",
     "time": "4m read time",
-    "tags": ["Security", "Phishing", "AI"]
+    "tags": ["Security", "Phishing", "AI"],
+    "likes": 94,
+    "dislikes": 8,
+    "comments": 21
   }
 ]

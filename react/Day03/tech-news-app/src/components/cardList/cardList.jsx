@@ -16,6 +16,9 @@ class CardList extends Component {
             category={item.category}
             time={item.time}
             tags={item.tags}
+            likes={item.likes}
+            dislikes={item.dislikes}
+            comments={item.comments}
           />
         ))}
       </section>
