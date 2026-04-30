@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "NVIDIA's New Blackwell GPU Architecture Redefines AI Performance",
+    "image": "https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?auto=format&fit=crop&w=800&q=80",
+    "date": "March 24, 2024",
+    "category": "Hardware",
+    "time": "4m read time",
+    "tags": ["AI", "GPU", "Innovation"]
+  },
+  {
+    "id": 2,
+    "title": "Apple Vision Pro: Two Months Later, the Verdict is In",
+    "image": "https://images.unsplash.com/photo-1617802690992-15d93263d3a9?auto=format&fit=crop&w=800&q=80",
+    "date": "March 22, 2024",
+    "category": "Gadgets",
+    "time": "6m read time",
+    "tags": ["Apple", "AR", "VR"]
+  },
+  {
+    "id": 3,
+    "title": "OpenAI Previews 'Sora', a Revolutionary Text-to-Video AI",
+    "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
+    "date": "March 20, 2024",
+    "category": "Software",
+    "time": "5m read time",
+    "tags": ["OpenAI", "Video", "Generative AI"]
+  },
+  {
+    "id": 4,
+    "title": "The Rise of On-Device AI in the Next Generation of Smartphones",
+    "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
+    "date": "March 18, 2024",
+    "category": "Mobile",
+    "time": "3m read time",
+    "tags": ["Mobile", "AI", "Privacy"]
+  },
+  {
+    "id": 5,
+    "title": "Microsoft and Mistral AI Announce Strategic Partnership",
+    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
+    "date": "March 15, 2024",
+    "category": "Business",
+    "time": "2m read time",
+    "tags": ["Microsoft", "Partnership", "Cloud"]
+  },
+  {
+    "id": 6,
+    "title": "Cybersecurity Experts Warn of Sophisticated AI-Generated Phishing",
+    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80",
+    "date": "March 12, 2024",
+    "category": "Security",
+    "time": "4m read time",
+    "tags": ["Security", "Phishing", "AI"]
+  }
+]

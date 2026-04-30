@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "NVIDIA's New Blackwell GPU Architecture Redefines AI Performance",
+    "excerpt": "The latest chips from NVIDIA promise 30x performance increases for large language model inference, marking a massive leap for generative AI.",
+    "image": "https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?auto=format&fit=crop&w=800&q=80",
+    "date": "March 24, 2024",
+    "category": "Hardware"
+  },
+  {
+    "id": 2,
+    "title": "Apple Vision Pro: Two Months Later, the Verdict is In",
+    "excerpt": "Has spatial computing really changed the way we work? We look at how users are actually utilizing the headset in their daily lives.",
+    "image": "https://images.unsplash.com/photo-1617802690992-15d93263d3a9?auto=format&fit=crop&w=800&q=80",
+    "date": "March 22, 2024",
+    "category": "Gadgets"
+  },
+  {
+    "id": 3,
+    "title": "OpenAI Previews 'Sora', a Revolutionary Text-to-Video AI",
+    "excerpt": "The new model can create realistic and imaginative scenes from text instructions, pushing the boundaries of creative technology.",
+    "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
+    "date": "March 20, 2024",
+    "category": "Software"
+  },
+  {
+    "id": 4,
+    "title": "The Rise of On-Device AI in the Next Generation of Smartphones",
+    "excerpt": "Companies like Samsung and Google are moving AI processing away from the cloud and directly onto your device for privacy and speed.",
+    "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
+    "date": "March 18, 2024",
+    "category": "Mobile"
+  },
+  {
+    "id": 5,
+    "title": "Microsoft and Mistral AI Announce Strategic Partnership",
+    "excerpt": "The collaboration aims to bring Mistral's open-weights models to Azure customers, diversifying the AI ecosystem.",
+    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
+    "date": "March 15, 2024",
+    "category": "Business"
+  },
+  {
+    "id": 6,
+    "title": "Cybersecurity Experts Warn of Sophisticated AI-Generated Phishing",
+    "excerpt": "New tools are making it easier for attackers to create perfectly personalized and convincing emails, bypassing traditional filters.",
+    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80",
+    "date": "March 12, 2024",
+    "category": "Security"
+  }
+]
