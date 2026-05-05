@@ -124,7 +124,7 @@
   background: none;
   border: none;
   color: #8b949e;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
   padding: 0;
@@ -133,6 +133,14 @@
 
 .action-btn:hover {
   color: #58a6ff;
+}
+
+.action-btn.like-btn:hover {
+  color: #3fb950;
+}
+
+.action-btn.dislike-btn:hover {
+  color: #f85149;
 }
 
 .action-btn svg {

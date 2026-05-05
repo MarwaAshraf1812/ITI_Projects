@@ -1,0 +1,18 @@
+/* Signup-specific additions on top of LoginPage.css */
+
+.signup-card {
+  max-width: 680px;
+}
+
+/* 2-column row for password fields */
+.signup-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 480px) {
+  .signup-row {
+    grid-template-columns: 1fr;
+  }
+}

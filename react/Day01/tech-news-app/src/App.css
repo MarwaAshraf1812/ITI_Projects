@@ -79,6 +79,31 @@ h3 {
   padding: 72px 0;
 }
 
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.news-stats {
+  background: var(--surface);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  font-size: 0.9rem;
+  color: var(--muted);
+  display: flex;
+  gap: 12px;
+}
+
+.news-stats span {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 
 .news-grid {
   display: grid;

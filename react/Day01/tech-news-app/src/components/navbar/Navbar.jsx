@@ -1,19 +1,19 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import "./Navbar.css";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const toggleMenu = useCallback(() => {
+    setIsMenuOpen(prev => !prev);
     setIsSearchOpen(false);
-  };
+  }, []);
 
-  const toggleSearch = () => {
-    setIsSearchOpen(!isSearchOpen);
+  const toggleSearch = useCallback(() => {
+    setIsSearchOpen(prev => !prev);
     setIsMenuOpen(false);
-  };
+  }, []);
 
   return (
     <header className="site-header" aria-label="Main Navigation">
@@ -44,7 +44,7 @@ const Navbar = () => {
           <a href="#">Reviews</a>
         </div>
 
-        <form className={`search-form ${isSearchOpen ? 'open' : ''}`}>
+        <form className={`search-form ${isSearchOpen ? 'open' : ''}`} onSubmit={(e) => e.preventDefault()}>
           <span className="search-icon" aria-hidden="true"></span>
           <input
             type="search"

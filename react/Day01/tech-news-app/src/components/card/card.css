@@ -72,3 +72,45 @@
   font-weight: 500;
   display: block;
 }
+
+.card-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid var(--line);
+}
+
+.action-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.like-btn:hover {
+  border-color: #4CAF50;
+  color: #4CAF50;
+}
+
+.dislike-btn:hover {
+  border-color: #f44336;
+  color: #f44336;
+}
+
+.action-btn span {
+  font-weight: 600;
+}
