@@ -1,0 +1,126 @@
+.create-page {
+  padding: 48px 0 80px;
+}
+
+.create-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-inline: var(--page-px);
+}
+
+.create-header {
+  margin-bottom: 36px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 24px;
+}
+
+.create-title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 900;
+  color: var(--text);
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+}
+
+.create-subtitle {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.create-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.form-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content-group {
+  flex: 1;
+}
+
+.content-group textarea {
+  min-height: 380px;
+  resize: vertical;
+  line-height: 1.7;
+}
+
+
+.create-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: flex-end;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+
+.cancel-btn {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancel-btn:hover {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+.submit-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(0, 229, 255, 0.25);
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 229, 255, 0.35);
+  background: var(--accent-strong);
+}
+
+.submit-btn:active { transform: translateY(0); }
+
+@media (max-width: 800px) {
+  .create-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .content-group textarea {
+    min-height: 220px;
+  }
+
+  .create-actions {
+    flex-direction: column-reverse;
+  }
+
+  .cancel-btn,
+  .submit-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

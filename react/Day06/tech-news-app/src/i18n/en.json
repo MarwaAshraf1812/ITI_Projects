@@ -1,0 +1,134 @@
+{
+  "navbar": {
+    "brand": "DevNews",
+    "home": "Home",
+    "explore": "Explore",
+    "community": "Community",
+    "resources": "Resources",
+    "searchPlaceholder": "Search tech news",
+    "createPost": "Create Post",
+    "logout": "Logout",
+    "login": "Login",
+    "joinUs": "Join Us"
+  },
+  "home": {
+    "latestNews": "Latest Tech News",
+    "createPostTitle": "Create Post",
+    "loginToCreate": "Login to Create"
+  },
+  "login": {
+    "title": "Welcome back",
+    "subtitle": "Sign in to create and manage your posts.",
+    "username": "Username",
+    "usernamePlaceholder": "Enter your username",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "signIn": "Sign In",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign up",
+    "errors": {
+      "fillAll": "Please fill in all fields."
+    },
+    "success": "Welcome back, {{username}}! 👋"
+  },
+  "signup": {
+    "title": "Create account",
+    "subtitle": "Join DevNews and start sharing tech insights.",
+    "username": "Username",
+    "usernamePlaceholder": "Choose a username",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "password": "Password",
+    "passwordPlaceholder": "Min. 6 characters",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Repeat password",
+    "createAccount": "Create Account",
+    "alreadyAccount": "Already have an account?",
+    "signIn": "Sign in",
+    "errors": {
+      "fillAll": "Please fill in all fields.",
+      "usernameLength": "Username must be at least 3 characters.",
+      "invalidEmail": "Please enter a valid email address.",
+      "passwordLength": "Password must be at least 6 characters.",
+      "passwordMismatch": "Passwords do not match."
+    },
+    "success": "Account created! Welcome, {{username}}! 🎉"
+  },
+  "createPost": {
+    "title": "Create New Post",
+    "subtitle": "Share the latest tech breakthroughs with the world.",
+    "postTitle": "Post Title",
+    "postTitlePlaceholder": "Enter a catchy title...",
+    "category": "Category",
+    "categories": {
+      "AI": "Artificial Intelligence",
+      "Hardware": "Hardware",
+      "Software": "Software",
+      "Mobile": "Mobile",
+      "Security": "Cybersecurity",
+      "Business": "Business",
+      "Gadgets": "Gadgets"
+    },
+    "imageUrl": "Image URL",
+    "imageUrlPlaceholder": "https://example.com/image.jpg",
+    "readTime": "Read Time",
+    "readTimePlaceholder": "e.g. 5m read time",
+    "tags": "Tags (comma separated)",
+    "tagsPlaceholder": "e.g. AI, Tech, Future",
+    "content": "Article Content",
+    "contentPlaceholder": "Write your full article here...",
+    "cancel": "Cancel",
+    "publish": "Publish Post",
+    "toasts": {
+      "titleRequired": "Post title is required.",
+      "contentRequired": "Article content cannot be empty.",
+      "publishing": "Publishing post...",
+      "success": "🚀 Post published successfully!",
+      "error": "Failed to publish. Please try again.",
+      "draftDiscarded": "Draft discarded."
+    }
+  },
+  "article": {
+    "notFound": "Article not found",
+    "backToHome": "← Back to Home",
+    "back": "Back",
+    "editorial": "DevNews Editorial",
+    "staffWriter": "Staff Writer"
+  },
+  "carousel": {
+    "readMore": "Read More",
+    "slides": [
+      {
+        "title": "The Future of AI: What to Expect in 2025",
+        "excerpt": "Artificial Intelligence is evolving rapidly. Here's a look at the breakthroughs expected to reshape the tech landscape in the coming years.",
+        "category": "Artificial Intelligence"
+      },
+      {
+        "title": "Quantum Computing Achieves New Milestone",
+        "excerpt": "Researchers have successfully stabilized qubits at room temperature, bringing us one step closer to mainstream quantum computers.",
+        "category": "Computing"
+      },
+      {
+        "title": "Cybersecurity Threats on the Rise for IoT Devices",
+        "excerpt": "As smart home devices become ubiquitous, security experts warn of new vulnerabilities that could expose user data.",
+        "category": "Cybersecurity"
+      }
+    ]
+  },
+  "footer": {
+    "description": "Premium intelligence for people building and backing the future of technology.",
+    "coverage": "Coverage",
+    "company": "Company",
+    "follow": "Follow",
+    "links": {
+      "ai": "Artificial Intelligence",
+      "consumerTech": "Consumer Tech",
+      "cybersecurity": "Cybersecurity",
+      "enterprise": "Enterprise",
+      "about": "About",
+      "advertise": "Advertise",
+      "careers": "Careers",
+      "contact": "Contact"
+    }
+  }
+}
