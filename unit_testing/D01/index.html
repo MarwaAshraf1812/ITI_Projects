@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic Test Runner & Form Validation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/10.2.0/mocha.min.css">
+  
+  <script type="importmap">
+    {
+      "imports": {
+        "chai": "https://esm.sh/chai@5.1.1"
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem;
+      background-color: #f8fafc;
+      color: #1e293b;
+      line-height: 1.5;
+    }
+    h1 {
+      font-size: 1.85rem;
+      color: #0f172a;
+      margin: 0 0 2rem 0;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 0.75rem;
+      font-weight: 700;
+    }
+    h2 {
+      font-size: 1.25rem;
+      color: #334155;
+      margin: 2.5rem 0 1rem 0;
+      font-weight: 600;
+    }
+    #val-form {
+      background: #ffffff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .form-group:last-child {
+      margin-bottom: 0;
+    }
+    label {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #475569;
+    }
+    input[type="text"] {
+      padding: 0.65rem 0.85rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: #1e293b;
+      width: 100%;
+      box-sizing: border-box;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+    .result-message {
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-top: 0.25rem;
+      min-height: 1.25rem;
+      display: block;
+    }
+    .result-message.success {
+      color: #10b981;
+    }
+    .result-message.error {
+      color: #ef4444;
+    }
+    #mocha {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 0;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+    #mocha #mocha-stats {
+      top: 24px;
+      right: 24px;
+      font-family: inherit;
+    }
+    #mocha ul {
+      font-family: inherit;
+      margin: 0;
+      padding: 0;
+    }
+    #mocha h1 {
+      font-size: 1.15rem;
+      border-bottom: none;
+      padding: 0;
+      margin: 0 0 1.25rem 0;
+      font-weight: 600;
+    }
+    #mocha h1 a {
+      color: #3b82f6;
+      text-decoration: none;
+    }
+    #mocha h1 a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Unit Testing & Form Validation</h1>
+
+  <h2>Problem 7: Form Validation</h2>
+  <form id="val-form" onsubmit="event.preventDefault();">
+    <div class="form-group">
+      <label for="str-input">String Input (Capitalize):</label>
+      <input type="text" id="str-input" placeholder="Type a string">
+      <span id="str-result" class="result-message"></span>
+    </div>
+    <div class="form-group">
+      <label for="num-input">Number Input (Check Positivity & Array):</label>
+      <input type="text" id="num-input" placeholder="Type a number">
+      <span id="num-result" class="result-message"></span>
+    </div>
+  </form>
+
+  <h2>Problem 8: Test Results</h2>
+  <div id="mocha"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/10.2.0/mocha.min.js"></script>
+  <script>
+    mocha.setup('bdd');
+  </script>
+
+  <script type="module">
+    import { capitalizeText, CheckPositivity, Mult, createArray } from './index.js';
+
+    const strInput = document.getElementById('str-input');
+    const strResult = document.getElementById('str-result');
+    const numInput = document.getElementById('num-input');
+    const numResult = document.getElementById('num-result');
+
+    strInput.addEventListener('input', () => {
+      const value = strInput.value;
+      if (!value) {
+        strResult.textContent = '';
+        strResult.className = 'result-message';
+        return;
+      }
+      try {
+        const capitalized = capitalizeText(value);
+        strResult.textContent = `Valid: ${capitalized}`;
+        strResult.className = 'result-message success';
+      } catch (err) {
+        strResult.textContent = `Invalid: ${err.message}`;
+        strResult.className = 'result-message error';
+      }
+    });
+
+    numInput.addEventListener('input', () => {
+      const value = numInput.value.trim();
+      if (!value) {
+        numResult.textContent = '';
+        numResult.className = 'result-message';
+        return;
+      }
+      const num = Number(value);
+      if (isNaN(num)) {
+        numResult.textContent = `Invalid: Not a valid number`;
+        numResult.className = 'result-message error';
+        return;
+      }
+
+      const isPositive = CheckPositivity(num);
+      const doubled = Mult(num);
+      
+      let arrMsg = '';
+      if (num >= 0 && Number.isInteger(num)) {
+        arrMsg = `, Array: [${createArray(num).join(', ')}]`;
+      }
+
+      numResult.textContent = `Valid! Positive: ${isPositive}, Doubled: ${doubled}${arrMsg}`;
+      numResult.className = 'result-message success';
+    });
+
+    import './test/task.test.js';
+    import './test/math.test.js';
+    
+    mocha.run();
+  </script>
+</body>
+</html>
