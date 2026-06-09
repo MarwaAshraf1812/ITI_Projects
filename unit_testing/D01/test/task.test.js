@@ -8,7 +8,7 @@ import {
   obj2,
   CheckPositivity,
   Mult,
-  obj3
+  obj3,
 } from "../index.js";
 
 describe("Problem 1: capitalizeText", () => {
@@ -21,7 +21,10 @@ describe("Problem 1: capitalizeText", () => {
   });
 
   it("should throw TypeError when a number is passed", () => {
-    expect(() => capitalizeText(12)).to.throw(TypeError, "parameter should be string");
+    expect(() => capitalizeText(12)).to.throw(
+      TypeError,
+      "parameter should be string",
+    );
   });
 
   it("should accept one parameter only", () => {
@@ -97,4 +100,4 @@ describe("Problem 6: obj3", () => {
   it("should check that a.b[0] includes {x: 1} using assert", () => {
     assert.deepInclude(obj3.a.b[0], { x: 1 });
   });
-});y
+});
