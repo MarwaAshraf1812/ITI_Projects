@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-crust: #8d5b4c;
+  --color-pastry: #f4a261;
+  --color-butter: #fffdf9;
+  --color-flour: #f5ebe0;
+  --color-chocolate: #2b170f;
+  --color-berry: #d1495b;
+  --color-honey: #e9c46a;
+
+  --color-primary: var(--color-pastry);
+  --color-secondary: var(--color-crust);
+  --color-accent: var(--color-berry);
+  --color-neutral-dark: var(--color-chocolate);
+  --color-neutral-light: var(--color-butter);
+  --color-cream-100: #fffdf9;
+  --color-cream-200: #fbf5ed;
+  --color-cream-300: #f5ebe0;
+  --color-cream-400: #e3d5ca;
+  --color-cream-500: #d5bdaf;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Outfit', sans-serif;
+  
+  --shadow-warm-sm: 0 1px 3px rgba(43, 23, 15, 0.05);
+  --shadow-warm-md: 0 4px 6px -1px rgba(43, 23, 15, 0.08), 0 2px 4px -1px rgba(43, 23, 15, 0.04);
+  --shadow-warm-lg: 0 10px 15px -3px rgba(43, 23, 15, 0.1), 0 4px 6px -2px rgba(43, 23, 15, 0.05);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-butter);
+  color: var(--color-chocolate);
+  -webkit-font-smoothing: antialiased;
+}

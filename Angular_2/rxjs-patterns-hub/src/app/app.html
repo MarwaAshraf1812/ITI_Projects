@@ -1,0 +1,30 @@
+<div class="min-h-screen bg-gray-50 text-gray-900 font-sans pb-16">
+  <header class="border-b border-gray-200 bg-white sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <h1 class="text-xl font-bold tracking-tight text-gray-900">
+          RxJS Patterns Hub
+        </h1>
+        <p class="text-xs text-gray-500 mt-0.5">Interactive Reactive Programming Sandbox</p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="max-w-4xl mx-auto px-6 mt-6">
+    <div class="flex flex-wrap gap-2 p-1 bg-gray-100 rounded-lg border border-gray-200">
+      @for (tab of tabs; track tab.path) {
+        <a [routerLink]="tab.path"
+           routerLinkActive="bg-white text-blue-600 shadow-sm border-gray-200"
+           [routerLinkActiveOptions]="{ exact: true }"
+           class="flex-1 min-w-[150px] px-4 py-2.5 rounded-md border border-transparent text-center transition-all duration-150 cursor-pointer">
+          <div class="text-xs font-bold">{{ tab.label }}</div>
+          <div class="text-[9px] text-gray-400 font-mono mt-0.5 uppercase">{{ tab.desc }}</div>
+        </a>
+      }
+    </div>
+  </nav>
+
+  <main class="max-w-7xl mx-auto px-6 mt-8">
+    <router-outlet></router-outlet>
+  </main>
+</div>

@@ -1,0 +1,52 @@
+<div class="max-w-3xl mx-auto mt-10 bg-white border border-slate-200 p-6 rounded-2xl shadow-md text-slate-800">
+  <div class="border-b border-slate-200 pb-4 mb-6">
+    <h2 class="text-2xl font-bold text-indigo-600">Movie Search Registry</h2>
+    <p class="text-xs text-slate-500 mt-1">Search real-time movie databases using RxJS debounceTime and switchMap.</p>
+  </div>
+
+  <div class="mb-6">
+    <input 
+      (input)="onTypeSearch($event)"
+      type="text" 
+      placeholder="Type movie name (min 2 characters)..." 
+      class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:border-indigo-500"
+    />
+  </div>
+
+  @if (isLoading) {
+    <div class="text-center py-8 text-indigo-600 animate-pulse text-sm font-medium">
+      Searching movies database...
+    </div>
+  }
+
+  @if (errorMessage) {
+    <div class="bg-rose-50 border border-rose-200 text-rose-600 p-4 rounded-xl text-sm mb-4">
+      Error: {{ errorMessage }}
+    </div>
+  }
+
+  @if (!isLoading && !errorMessage) {
+    <div class="space-y-4">
+      @for (movie of moviesList; track movie.id) {
+        <div class="flex items-center gap-4 bg-slate-50 border border-slate-200 p-4 rounded-xl">
+          <div class="w-12 h-16 bg-slate-200 rounded flex items-center justify-center text-xs font-bold text-slate-400 overflow-hidden">
+            @if (movie.poster) {
+              <span class="text-center px-1 text-[10px]">{{ movie.title }}</span>
+            } @else {
+              No Poster
+            }
+          </div>
+          <div class="flex-1">
+            <h4 class="font-bold text-slate-700">{{ movie.title }}</h4>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-xs bg-slate-200 text-slate-600 px-2 py-0.5 rounded font-mono">{{ movie.year }}</span>
+              <span class="text-xs bg-indigo-50 text-indigo-600 px-2 py-0.5 rounded font-mono font-bold">IMDb {{ movie.rating }}</span>
+            </div>
+          </div>
+        </div>
+      } @empty {
+        <div class="text-center py-8 text-slate-400 text-sm">No movies found. Try searching for "Inception", "Interstellar", or "Dark Knight".</div>
+      }
+    </div>
+  }
+</div>

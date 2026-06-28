@@ -1,0 +1,54 @@
+<div class="border border-gray-200 bg-white rounded-lg p-6 max-w-3xl mx-auto shadow-sm">
+  <div class="flex items-center justify-between mb-4 pb-4 border-b border-gray-100">
+    <div>
+      <h2 class="text-lg font-bold text-gray-900">City Sensors Telemetry</h2>
+      <p class="text-xs text-gray-500">combineLatest</p>
+    </div>
+  </div>
+  
+  <p class="text-xs text-gray-600 mb-6">
+    Combines temperature (3s) and traffic (5s) sensors telemetry.
+  </p>
+
+  <div class="space-y-6 min-h-[160px] mb-6">
+    @if (cityLogs; as logList) {
+      @if (logList.length > 0) {
+        <div class="p-4 bg-gray-50 border border-gray-100 rounded-md flex items-center justify-around gap-4 text-xs">
+          <div>
+            <span class="text-gray-400 font-bold block mb-1">Temperature</span>
+            <span class="text-base font-bold text-gray-900">{{ logList[0].temp }}°C</span>
+          </div>
+          <div class="w-px h-8 bg-gray-200"></div>
+          <div>
+            <span class="text-gray-400 font-bold block mb-1">Traffic Density</span>
+            <span class="text-base font-bold text-gray-900">{{ logList[0].traffic }}</span>
+          </div>
+        </div>
+
+        <div class="space-y-1.5">
+          <div class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">History (Last 8 updates)</div>
+          <div class="max-h-[160px] overflow-y-auto space-y-1 pr-1">
+            @for (log of logList; track $index) {
+              <div class="flex justify-between items-center p-2 bg-gray-50 border border-gray-100 rounded-md text-[11px] text-gray-700">
+                <span class="font-bold text-gray-500">Reading #{{ logList.length - $index }}</span>
+                <span>Temp: {{ log.temp }}°C | Traffic: {{ log.traffic }}</span>
+              </div>
+            }
+          </div>
+        </div>
+      } @else {
+        <div class="py-12 text-center text-gray-400 text-xs border border-dashed border-gray-200 rounded-md">
+          Awaiting telemetry readings...
+        </div>
+      }
+    } @else {
+      <div class="py-12 text-center text-gray-400 text-xs border border-dashed border-gray-200 rounded-md">
+        Connecting to sensors...
+      </div>
+    }
+  </div>
+
+  <button (click)="refreshCity()" class="w-full py-2.5 px-4 rounded-md font-bold text-xs bg-gray-900 hover:bg-gray-800 text-white transition-colors duration-150">
+    Restart Sensor Connection
+  </button>
+</div>

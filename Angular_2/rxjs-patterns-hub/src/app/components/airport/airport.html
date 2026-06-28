@@ -1,0 +1,68 @@
+<div class="border border-gray-200 bg-white rounded-lg p-6 max-w-3xl mx-auto shadow-sm">
+  <div class="flex items-center justify-between mb-4 pb-4 border-b border-gray-100">
+    <div>
+      <h2 class="text-lg font-bold text-gray-900">Airport Dashboard Portal</h2>
+      <p class="text-xs text-gray-500">forkJoin</p>
+    </div>
+  </div>
+  
+  <p class="text-xs text-gray-600 mb-6">
+    Subscribes to Flight, Weather, and Gate services in parallel.
+  </p>
+
+  <div class="min-h-[160px] flex flex-col justify-center mb-6">
+    @if (isDashboardReady) {
+      <div class="mb-4 p-3 bg-emerald-55/10 text-emerald-700 border border-emerald-100 rounded-md text-xs font-semibold">
+        Dashboard Ready: All endpoints loaded!
+      </div>
+
+      <div class="grid grid-cols-3 gap-4">
+        @if (flightData) {
+          <div class="p-4 bg-gray-50 border border-gray-100 rounded-md text-xs">
+            <span class="text-gray-400 font-bold block mb-1">Flight Status</span>
+            <div class="font-bold text-gray-900">{{ flightData.schedule }}</div>
+            <div class="text-[10px] text-emerald-600 font-semibold mt-0.5">{{ flightData.status }}</div>
+          </div>
+        }
+
+        @if (weatherData) {
+          <div class="p-4 bg-gray-50 border border-gray-100 rounded-md text-xs">
+            <span class="text-gray-400 font-bold block mb-1">Weather Info</span>
+            <div class="font-bold text-gray-900">{{ weatherData.temp }}°C</div>
+            <div class="text-[10px] text-gray-500 mt-0.5">{{ weatherData.condition }}</div>
+          </div>
+        }
+
+        @if (gateData) {
+          <div class="p-4 bg-gray-50 border border-gray-100 rounded-md text-xs">
+            <span class="text-gray-400 font-bold block mb-1">Gate Allocation</span>
+            <div class="font-bold text-gray-900">{{ gateData.gate }}</div>
+            <div class="text-[10px] text-gray-500 mt-0.5">{{ gateData.terminal }}</div>
+          </div>
+        }
+      </div>
+    } @else if (errorMessage) {
+      <div class="p-4 bg-rose-55/10 text-rose-700 border border-rose-100 rounded-md text-xs">
+        <span class="font-bold block">Error Occurred</span>
+        {{ errorMessage }}
+      </div>
+    } @else if (isLoading) {
+      <div class="py-12 text-center text-gray-400 text-xs border border-dashed border-gray-200 rounded-md">
+        Loading services...
+      </div>
+    } @else {
+      <div class="py-12 text-center text-gray-400 text-xs border border-dashed border-gray-200 rounded-md">
+        Dashboard locked. Click load below to synchronize.
+      </div>
+    }
+  </div>
+
+  <div class="flex gap-4">
+    <button (click)="loadDashboard(false)" [disabled]="isLoading" class="flex-1 py-2.5 px-4 rounded-md font-bold text-xs bg-gray-900 hover:bg-gray-800 text-white transition-colors duration-150 disabled:opacity-40">
+      Load Dashboard (Success)
+    </button>
+    <button (click)="loadDashboard(true)" [disabled]="isLoading" class="flex-1 py-2.5 px-4 rounded-md font-bold text-xs bg-white hover:bg-gray-50 text-gray-700 border border-gray-200 transition-colors duration-150 disabled:opacity-40">
+      Load Dashboard (Simulate Error)
+    </button>
+  </div>
+</div>

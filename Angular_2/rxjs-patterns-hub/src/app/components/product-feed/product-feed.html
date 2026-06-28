@@ -1,0 +1,57 @@
+<div class="border border-gray-200 bg-white rounded-lg p-6 max-w-3xl mx-auto shadow-sm">
+  <div class="flex items-center justify-between mb-4 pb-4 border-b border-gray-100">
+    <div>
+      <h2 class="text-lg font-bold text-gray-900">Warehouse Feed Monitor</h2>
+      <p class="text-xs text-gray-500">merge & of</p>
+    </div>
+  </div>
+  
+  <p class="text-xs text-gray-600 mb-6">
+    This panel merges three independent warehouse product streams.
+  </p>
+
+  @if (products$ | async; as productList) {
+    <div class="grid grid-cols-3 gap-4 mb-6">
+      <div class="p-3 bg-gray-50 border border-gray-100 rounded-md">
+        <div class="text-[10px] text-gray-500 font-bold uppercase">Total Items</div>
+        <div class="text-lg font-bold text-gray-900 mt-0.5">{{ productList.length }}</div>
+      </div>
+      <div class="p-3 bg-gray-50 border border-gray-100 rounded-md">
+        <div class="text-[10px] text-gray-500 font-bold uppercase">Coverage</div>
+        <div class="text-lg font-bold text-gray-900 mt-0.5">
+          {{ productList.length === 3 ? '100%' : productList.length === 2 ? '67%' : productList.length === 1 ? '33%' : '0%' }}
+        </div>
+      </div>
+      <div class="p-3 bg-gray-50 border border-gray-100 rounded-md">
+        <div class="text-[10px] text-gray-500 font-bold uppercase">Status</div>
+        <div class="text-xs font-semibold mt-1" [class.text-amber-600]="productList.length < 3" [class.text-emerald-600]="productList.length === 3">
+          {{ productList.length < 3 ? 'Receiving...' : 'All Connected' }}
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-2 mb-6">
+      @if (productList.length === 0) {
+        <div class="py-12 text-center text-gray-400 text-xs border border-dashed border-gray-200 rounded-md">
+          Awaiting Warehouse stream...
+        </div>
+      } @else {
+        @for (product of productList; track product.id) {
+          <div class="flex items-center justify-between p-3 bg-gray-50 border border-gray-100 rounded-md text-xs">
+            <div>
+              <h4 class="font-bold text-gray-800">{{ product.name }}</h4>
+              <span class="text-[10px] text-gray-400">Source: {{ product.origin || 'Warehouse ' + product.id }}</span>
+            </div>
+            <div class="font-mono font-bold text-gray-900">
+              {{ product.price | currency }}
+            </div>
+          </div>
+        }
+      }
+    </div>
+  }
+
+  <button (click)="refreshWarehouse()" class="w-full py-2.5 px-4 rounded-md font-bold text-xs bg-gray-900 hover:bg-gray-800 text-white transition-colors duration-150">
+    Restart Merge Simulation
+  </button>
+</div>

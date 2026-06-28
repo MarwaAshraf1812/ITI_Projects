@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "Artisanal Sourdough Loaf",
+    "category": "Bread",
+    "price": 6.50,
+    "description": "Slow-fermented for 24 hours with organic stone-ground flour, yielding a thick caramelized crust and airy interior.",
+    "image": "/sourdough.png",
+    "prepTime": "24h Prep",
+    "rating": 4.9,
+    "badge": "Best Seller"
+  },
+  {
+    "id": 2,
+    "name": "Classic Butter Croissants",
+    "category": "Pastries",
+    "price": 3.75,
+    "description": "Layered with premium French butter for an incredibly light, flaky texture and rich golden-brown finish.",
+    "image": "/croissant.png",
+    "prepTime": "Fresh Daily",
+    "rating": 4.8,
+    "badge": "Popular"
+  },
+  {
+    "id": 3,
+    "name": "Luxurious Raspberry Tart",
+    "category": "Cakes",
+    "price": 8.20,
+    "description": "Golden shortbread crust filled with rich vanilla bean pastry cream and piled high with fresh, glossy raspberries.",
+    "image": "/tart.png",
+    "prepTime": "Chef Special",
+    "rating": 5.0,
+    "badge": "Signature"
+  },
+  {
+    "id": 4,
+    "name": "Almond Croissant Deluxe",
+    "category": "Pastries",
+    "price": 4.50,
+    "description": "Double-baked croissant filled with rich frangipane (almond cream) and topped with sliced almonds and powder sugar.",
+    "image": "/croissant.png",
+    "prepTime": "Fresh Daily",
+    "rating": 4.9,
+    "badge": null
+  },
+  {
+    "id": 5,
+    "name": "Rustic Olive & Herb Bread",
+    "category": "Bread",
+    "price": 7.00,
+    "description": "Hearty wheat loaf folded with Greek Kalamata olives, fresh rosemary, thyme, and a drizzle of extra virgin olive oil.",
+    "image": "/sourdough.png",
+    "prepTime": "18h Prep",
+    "rating": 4.7,
+    "badge": "New"
+  },
+  {
+    "id": 6,
+    "name": "Strawberry Custard Tart",
+    "category": "Cakes",
+    "price": 8.00,
+    "description": "Classic French sweet pastry crust filled with crème pâtissière and decorated with sweet glazed fresh strawberries.",
+    "image": "/tart.png",
+    "prepTime": "Chef Special",
+    "rating": 4.8,
+    "badge": null
+  }
+]
